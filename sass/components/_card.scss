@@ -1,0 +1,94 @@
+.card-list {
+  position: relative;
+  height: 50vh;
+}
+
+.card {
+  @include set-width-n-height(295px, 325px);
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translatex(-50%);
+  padding: 0.4rem 1.8rem;
+  border: none;
+  box-shadow: 0 9px 36px rgba(0, 0, 0, 0.24);
+}
+
+.card--right,
+.card--left {
+  background-color: $background-white;
+  top: -30%;
+}
+
+.card--right {
+  transform: translatex(50%);
+}
+
+.card--left {
+  transform: translatex(-150%);
+}
+
+.card--mid {
+  background-color: $background-black;
+  //left: 40%;
+}
+.card--mid .card__des {
+  color: $background-white;
+}
+
+.card__title-one,
+.card__title-two {
+  text-align: center;
+  color: $primary-red;
+}
+
+.card__title-one {
+  margin-top: 1rem;
+  font-family: "noto-bold", sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.card__title-two {
+  margin-bottom: 1.7rem;
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+
+.card__des {
+  font-size: 12px;
+  text-align: justify;
+  word-spacing: -2px;
+  text-justify: distribute;
+}
+.card__des span {
+  display: block;
+  //font-family: "noto-bold", sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1.4rem 0 0.4rem 0;
+}
+.card--right .card__des {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+.list-number {
+  text-align: right;
+  color: $text-black;
+}
+.list-number li {
+  margin-bottom: 0.3rem;
+  font-family: "noto-bold", sans-serif;
+  font-size: 2rem;
+}
+.list-facts {
+  margin-top: 0.6rem;
+}
+.list-facts li {
+  margin-bottom: 1.6rem;
+  font-size: 0.9rem;
+}

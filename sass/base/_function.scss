@@ -1,0 +1,7 @@
+@function set-text-color($bg-color) {
+  @if ($bg-color == $background-white) {
+    @return $text-black;
+  } @else {
+    @return #fff;
+  }
+}

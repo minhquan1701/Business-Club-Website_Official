@@ -1,0 +1,91 @@
+.logo {
+  margin-left: 3rem;
+  cursor: pointer;
+  width: 190px;
+}
+.nav-link {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1.4rem;
+  &:hover {
+    color: $primary-red;
+  }
+}
+.nav-top {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease-in-out;
+  //z-index: 2;
+  padding-top: 1rem;
+  width: 100%;
+  height: 70px;
+
+  .nav-items {
+    position: relative;
+    margin-right: 1.3rem;
+    height: 100%;
+
+    .nav-item {
+      display: inline-block;
+      margin-right: 1.2rem;
+      padding: 1.3rem 0.7rem;
+
+      &:hover {
+        border-bottom: 4px solid $primary-red;
+      }
+    }
+    .nav-item__sub {
+      display: none;
+      position: absolute;
+      opacity: 0;
+      z-index: 2;
+      background-color: rgba($background-white, $alpha: 0.8);
+      width: 40%;
+      padding: 0.5rem 1rem 1.2rem 0.5rem;
+
+      .nav-link {
+        border-bottom: 1px solid black;
+        padding: 0.5rem 0 0.3rem 0;
+        color: $text-black;
+        &:hover {
+          color: $primary-red;
+        }
+      }
+
+      .nav-link:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.nav-item:nth-child(1):hover {
+  .nav-item__sub {
+    display: block;
+    top: 102%;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+}
+
+//Navigation displays differently on scroll on big screens.
+/* .nav-change {
+  //background-color: $text-color;
+  @include set-bg-txt_clr($text-color);
+
+  .nav-item > .nav-link {
+    color: $white-smoke;
+  }
+
+  .nav-item:hover {
+    border-bottom: none !important;
+
+    & > .nav-link {
+      color: $primary-color;
+    }
+  }
+} */
