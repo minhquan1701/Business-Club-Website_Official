@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
 (function () {
   const deptBtnList = document.querySelectorAll(".btn-lg");
   const closeBtnList = document.querySelectorAll(".close-btn");
+  const navigation = document.querySelector(".nav-top");
 
   deptBtnList.forEach((deptBtn) => {
     deptBtn.addEventListener("click", () => {
@@ -27,4 +28,22 @@ window.addEventListener("DOMContentLoaded", () => {
       closeBtn.parentElement.previousElementSibling.style.display = "block";
     });
   });
+
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          navigation.classList.add("nav-change");
+        } else {
+          navigation.classList.remove("nav-change");
+        }
+      });
+    },
+    {
+      threshold: 1,
+      rootMargin: "-100px 0px 0px 0px",
+    }
+  );
+
+  navObserver.observe(document.querySelector(".headline"));
 })();
