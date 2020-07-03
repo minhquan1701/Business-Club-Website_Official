@@ -1,17 +1,22 @@
 .logo {
-  margin-left: 3rem;
+  margin: 0 0 1rem 3rem;
   cursor: pointer;
   width: 190px;
 }
+
 .nav-link {
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.2rem;
-  &:hover {
-    color: $primary-red;
-  }
 }
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-top .nav-items .nav-item__sub .nav-link:hover {
+  color: $primary-red;
+}
+
 .nav-top {
   display: flex;
   position: fixed;
@@ -46,9 +51,6 @@
         border-bottom: 1px solid black;
         padding: 0.5rem 0 0.3rem 0;
         color: $text-black;
-        &:hover {
-          color: $primary-red;
-        }
       }
 
       .nav-link:last-child {
