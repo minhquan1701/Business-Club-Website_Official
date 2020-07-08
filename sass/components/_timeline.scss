@@ -1,0 +1,21 @@
+.timeline-projects {
+  @include set-width-n-height(100%, 90vh);
+  position: relative;
+  background: url("../../img/background-project.jpg") center top/cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #171717, $alpha: 0.8);
+    @include set-width-n-height(100%, 100%);
+  }
+}
+.timeline-projects .title {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  color: $background-white;
+  //transform: translate(-50%)
+}

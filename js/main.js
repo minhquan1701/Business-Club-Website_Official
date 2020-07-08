@@ -57,15 +57,11 @@ window.addEventListener("DOMContentLoaded", () => {
             entry.target.id == "about-us" ||
             entry.target.id == "department"
           ) {
-            document
-              .querySelector(`#nav-link--${entry.target.id}`)
-              .classList.add("nav-item--changed");
             document.querySelector("#about").classList.add("nav-item--changed");
-            /*  document.querySelector(
-              `#nav-link--${entry.target.id}`
-            ).style.color = "#ff0020";
-            document.querySelector("#about").style.color = "#ff0020"; */
           }
+          document
+            .querySelector(`#nav-link--${entry.target.id}`)
+            .classList.add("nav-item--changed");
         } else {
           document
             .querySelector(`#nav-link--${entry.target.id}`)
@@ -84,4 +80,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   navItemObserver.observe(document.querySelector("#department"));
   navItemObserver.observe(document.querySelector("#about-us"));
+  navItemObserver.observe(document.querySelector("#projects"));
+  navItemObserver.observe(document.querySelector("#partnership"));
 })();

@@ -72,7 +72,7 @@
 
 //Navigation displays differently on scroll on big screens.
 .nav-change {
-  background-color: $background-black;
+  background-color: rgba($color: $background-black, $alpha: 0.9);
   //@include set-bg-txt_clr($text-color);
 
   /* .nav-item > .nav-link {
