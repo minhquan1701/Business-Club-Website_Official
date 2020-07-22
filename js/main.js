@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   navObserver.observe(document.querySelector(".headline"));
 
-  //Nav item's color change on scroll
+  /********Nav item's color change on scroll*******/
 
   const navItemObserver = new IntersectionObserver(
     (entries) => {
@@ -82,4 +82,35 @@ window.addEventListener("DOMContentLoaded", () => {
   navItemObserver.observe(document.querySelector("#about-us"));
   navItemObserver.observe(document.querySelector("#projects"));
   navItemObserver.observe(document.querySelector("#partnership"));
+
+  /**********CASOUREL'S NAVIGATOR EVENT LISTENTER***********/
+  function activateNavigator() {
+    document
+      .querySelector(".navigator__item--active")
+      .classList.remove("navigator__item--active", "style-red", "style-bold");
+
+    this.classList.add("navigator__item--active", "style-red", "style-bold");
+
+    document
+      .querySelector(".partnership-container__list--show")
+      .classList.remove("partnership-container__list--show");
+
+    console.log(document.querySelector(`#link-${this.id}`));
+    document
+      .querySelector(`#link-${this.id}`)
+      .classList.add("partnership-container__list--show");
+  }
+
+  document.querySelectorAll(".navigator__item").forEach((item) => {
+    item.addEventListener("click", activateNavigator);
+  });
+
+  /******* AUTOMATIC TESTIMONIAL SLIDES********/
+  setInterval(changeSlide, 5000);
+
+  function changeSlide() {
+    document.querySelectorAll(".testimonial-container").forEach((container) => {
+      container.classList.toggle("testimonial-container--show");
+    });
+  }
 })();

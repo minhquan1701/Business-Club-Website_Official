@@ -1,0 +1,40 @@
+footer {
+  @include set-bg-n-text-color(#000);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo p {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0.5rem;
+}
+.footer-item {
+  padding: 0.4rem 0;
+}
+.footer-item i {
+  font-size: 1.2em;
+  margin-right: 0.4rem;
+}
+.footer-item a {
+  color: $background-white;
+  transition: color 0.1s ease-in-out;
+
+  &:hover {
+    color: $primary-red;
+  }
+}
+.footer-icons {
+  margin-right: 3rem;
+}
+.facebook-logo,
+.ins-logo {
+  margin-right: 0.5rem;
+  width: 50px;
+}

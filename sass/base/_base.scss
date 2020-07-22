@@ -6,17 +6,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* @font-face {
-  font-family: "noto-bold";
-  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap")
-      format("woff2"),
-    url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap")
-      format("woff"),
-    url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap")
-      format("truetype");
+
+html {
+  scroll-behavior: smooth;
 }
- */
-html,
 body {
   width: 100vw;
   height: 100vh;
@@ -25,29 +18,43 @@ body {
   line-height: 1.1;
   letter-spacing: 1px;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
-li,
 a {
+  display: inline-block;
   text-decoration: none;
 }
 
 ul {
   list-style-type: none;
 }
-a {
-  display: block;
-}
+
 span {
   //color: $primary-red;
   text-transform: uppercase;
 }
+.style-bold {
+  font-weight: 700 !important;
+}
+.style-red {
+  color: $primary-red !important;
+}
+
 .icon {
   width: 20px;
 }
 .btn {
-  border: 3px solid rgb(255, 255, 255);
   color: rgb(255, 255, 255);
   cursor: pointer;
+}
+
+.btn-small {
+  margin-top: 1rem;
+  padding: 0.4rem 1.1rem;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 102px;
+}
+img {
+  width: 100%;
 }

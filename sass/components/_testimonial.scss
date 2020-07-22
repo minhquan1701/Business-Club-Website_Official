@@ -1,0 +1,90 @@
+.testimonial {
+  @include set-width-n-height(100%, 80vh);
+}
+.testimonial-wraper {
+  position: relative;
+  margin: 4rem auto;
+  width: 90%;
+}
+.testimonial-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+  @include set-width-n-height(100%, 100%);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2.1rem;
+  place-items: center;
+  pointer-events: none;
+  transition: all 1s ease-in-out;
+}
+.testimonial-card {
+  border-radius: 20px;
+  @include set-bg-n-text-color($white-smoke);
+  transition: all 0.3s ease-in-out;
+  padding: 2.5rem 0.3rem 7rem 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    @include set-bg-n-text-color($primary-red);
+  }
+
+  &:hover > .quote-sign {
+    opacity: 1;
+  }
+}
+.quote-sign {
+  margin-top: -110px;
+  margin-left: 60%;
+  transform: rotate(179deg);
+  width: 140px;
+  opacity: 0.7;
+}
+.testimonial-card__name-tag {
+  display: flex;
+  //justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.testimonial-card__name-tag__ava {
+  display: inline-block;
+  margin-right: 1rem;
+  background: url("../img/quan.jpg") no-repeat center center/cover;
+
+  @include set-width-n-height(70px, 70px);
+  border-radius: 50%;
+  border: 1px solid mix(white, $background-black, 60);
+}
+
+/* .testimonial-card__name-tag__ava > img {
+  object-fit: contain;
+
+  width: 100%;
+  height: 70px;
+} */
+
+.testimonial-card__name-tag__info {
+  border-bottom: 1px solid mix(white, $background-black, 60);
+  padding: 0 0.2rem 1.3rem 0;
+}
+
+.testimonial-card__name-tag__info__name {
+  margin-bottom: 0.2rem;
+}
+
+.testimonial-card__name-tag__info__title {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+.testimonial-card__quote {
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.testimonial-container--show {
+  opacity: 1;
+  pointer-events: initial;
+}

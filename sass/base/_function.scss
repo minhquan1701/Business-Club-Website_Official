@@ -1,7 +1,11 @@
 @function set-text-color($bg-color) {
-  @if ($bg-color == $background-white) {
+  @if ($bg-color == $background-white or $bg-color == $white-smoke) {
     @return $text-black;
   } @else {
-    @return #fff;
+    @return $background-white;
   }
+}
+
+@function get-grid-area($pos) {
+  @return map-get($grid-area, $pos);
 }

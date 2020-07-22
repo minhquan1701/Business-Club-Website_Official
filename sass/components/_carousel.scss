@@ -1,0 +1,85 @@
+.carousel {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100vw;
+  height: 90vh;
+}
+.navigator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-black;
+}
+
+.navigator-content {
+  text-align: right;
+}
+
+.navigator__item {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: mix(white, $background-black, 20);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.navigator__item--active {
+  padding: 0.5rem 0;
+  font-size: 2rem;
+  text-shadow: 0px 4px 7px rgba($color: #000000, $alpha: 0.25);
+}
+
+.partnership-container {
+  position: relative;
+}
+
+.partnership-container__list {
+  position: absolute;
+  display: grid;
+
+  //top: 3rem;
+  left: 4rem;
+  overflow-wrap: break-word;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "one one two two three three"
+    "four four four five five five"
+    "six six seven seven eight eight"
+    "nine nine nine ten ten ten"
+    "eleven eleven twelve twelve thirdteen thirdteen";
+  //grid-gap: rem;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  @include set-width-n-height(100%, 100%);
+
+  &:nth-of-type(1) .partnership-item:nth-of-type(13) {
+    width: 99px;
+  }
+
+  &:nth-of-type(2) {
+    top: 3rem;
+  }
+}
+
+.partnership-item {
+  width: 150px;
+}
+
+@for $i from 1 through 13 {
+  .partnership-item:nth-of-type(#{$i}) {
+    grid-area: get-grid-area($i);
+  }
+}
+
+.partnership-item:nth-of-type(4),
+.partnership-item:nth-of-type(9) {
+  justify-self: center;
+}
+
+.partnership-container__list--show {
+  opacity: 1;
+}

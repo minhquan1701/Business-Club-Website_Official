@@ -2,3 +2,9 @@
   width: $width;
   height: $height;
 }
+
+@mixin set-bg-n-text-color($bg-color) {
+  background-color: $bg-color;
+
+  color: set-text-color($bg-color);
+}

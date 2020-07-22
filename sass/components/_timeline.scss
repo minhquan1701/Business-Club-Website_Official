@@ -1,7 +1,7 @@
 .timeline-projects {
   @include set-width-n-height(100%, 90vh);
   position: relative;
-  background: url("../../img/background-project.jpg") center top/cover;
+  background: url("../img/background-project.jpeg") center top/cover;
 
   &::before {
     content: "";
@@ -12,10 +12,135 @@
     @include set-width-n-height(100%, 100%);
   }
 }
+
 .timeline-projects .title {
   position: absolute;
   top: 40px;
   left: 50%;
   color: $background-white;
   //transform: translate(-50%)
+}
+
+.timeline-container {
+  white-space: nowrap;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+%dot-template {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  bottom: 0;
+  z-index: 1;
+
+  @include set-width-n-height(20px, 20px);
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.timeline__item {
+  position: relative;
+  display: inline-block;
+  background-color: $background-white;
+
+  @include set-width-n-height(500px, 3px);
+
+  &::after {
+    @extend %dot-template;
+  }
+
+  &::before {
+    @extend %dot-template;
+    @include set-width-n-height(40px, 40px);
+
+    background-color: transparent;
+    border: 2px solid $dark-red;
+    left: calc(100% - 12px);
+    //transform: translateX(50%);
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover::after {
+    background-color: $primary-red;
+  }
+
+  &:hover &__content {
+    background-color: $dark-red;
+    top: calc(100% + 25px);
+    left: calc(100% - 5px);
+  }
+}
+
+.timeline__item__logo {
+  position: absolute;
+  bottom: -20px;
+  left: 100%;
+  transform: translateX(-50%);
+  max-width: 200px;
+}
+
+.timeline__item:nth-child(2) .timeline__item__logo {
+  max-width: 160px;
+  bottom: 15px;
+}
+
+.timeline__item:nth-child(3) .timeline__item__logo {
+  bottom: 45px;
+}
+
+.timeline {
+  margin-right: 35%;
+}
+
+.timeline__item:first-child {
+  background-color: transparent;
+}
+
+.timeline__item__content {
+  position: absolute;
+  top: calc(100% + 30px);
+  left: 100%;
+  transform: translateX(-50%);
+  padding: 20px;
+  white-space: normal;
+  transition: all 0.2s ease-in-out;
+
+  @include set-bg-n-text-color(rgba($color: $dark-red, $alpha: 0.34));
+  @include set-width-n-height(380px, 200px);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $background-white;
+    width: 100%;
+    height: 3px;
+  }
+
+  /* &:hover {
+    background-color: $dark-red;
+    top: calc(100% + 25px);
+    left: calc(100% - 5px);
+  } */
+}
+
+.timeline__item__content__des {
+  line-height: 1.2;
+}
+
+.timeline__item__content__btn {
+  font-weight: 700;
+
+  &:hover {
+    @include set-bg-n-text-color($background-white);
+  }
 }
