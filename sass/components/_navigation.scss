@@ -64,7 +64,8 @@
 .nav-item:nth-child(1):hover {
   .nav-item__sub {
     display: block;
-    bottom: -110px;
+    top: 70%;
+    //bottom: -100px;
     left: 0;
     transition: opacity 0.5s ease-in-out;
     opacity: 1;
@@ -74,6 +75,7 @@
 //Navigation displays differently on scroll on big screens.
 .nav-change {
   background-color: rgba($color: $background-black, $alpha: 0.9);
+  opacity: 1;
   //@include set-bg-txt_clr($text-color);
 
   /* .nav-item > .nav-link {

@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const deptBtnList = document.querySelectorAll(".btn-lg");
   const closeBtnList = document.querySelectorAll(".close-btn");
   const navigation = document.querySelector(".nav-top");
+  const navItemList = document.querySelectorAll(".nav-link");
 
   deptBtnList.forEach((deptBtn) => {
     deptBtn.addEventListener("click", () => {
@@ -29,7 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const navObserver = new IntersectionObserver(
+  /* const navObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
@@ -44,8 +45,18 @@ window.addEventListener("DOMContentLoaded", () => {
       rootMargin: "-100px 0px 0px 0px",
     }
   );
+ */
 
-  navObserver.observe(document.querySelector(".headline"));
+  window.onscroll = function () {
+    navigation.style.opacity = 1;
+
+    navigation.classList.add("nav-change");
+    if (window.scrollY === 0) {
+      navigation.classList.remove("nav-change");
+    }
+  };
+
+  /* navObserver.observe(document.querySelector(".headline")); */
 
   /********Nav item's color change on scroll*******/
 
@@ -54,10 +65,21 @@ window.addEventListener("DOMContentLoaded", () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           if (
-            entry.target.id == "about-us" ||
-            entry.target.id == "department"
+            entry.target.id === "about-us" ||
+            entry.target.id === "department"
           ) {
-            document.querySelector("#about").classList.add("nav-item--changed");
+            /* console.log(entry.target.id);
+            document.querySelector("#about").classList.add("nav-item--changed");*/
+            console.log(
+              document
+                .querySelector(`#nav-link--${entry.target.id}`)
+                .parentElement.previousElementSibling.classList.add(
+                  "nav-item--changed"
+                )
+            );
+            document
+              .querySelector(`#nav-link--${entry.target.id}`)
+              .parentElement.parentElement.classList.add("nav-item--changed");
           }
           document
             .querySelector(`#nav-link--${entry.target.id}`)
@@ -82,6 +104,15 @@ window.addEventListener("DOMContentLoaded", () => {
   navItemObserver.observe(document.querySelector("#about-us"));
   navItemObserver.observe(document.querySelector("#projects"));
   navItemObserver.observe(document.querySelector("#partnership"));
+  navItemObserver.observe(document.querySelector("#contact"));
+
+  navItemList.forEach((navItem) =>
+    navItem.addEventListener("click", () => {
+      setTimeout(() => {
+        navigation.style.opacity = 0;
+      }, 1000);
+    })
+  );
 
   /**********CASOUREL'S NAVIGATOR EVENT LISTENTER***********/
   function activateNavigator() {

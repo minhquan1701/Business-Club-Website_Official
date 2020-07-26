@@ -4,12 +4,12 @@
 }
 
 .card {
-  @include set-width-n-height(295px, 325px);
+  @include set-width-n-height(295px, 350px);
   position: absolute;
   top: -40%;
   left: 50%;
   transform: translatex(-50%);
-  padding: 0.4rem 1.8rem;
+  padding: 0.4rem 1rem;
   border: none;
   box-shadow: 0 9px 36px rgba(0, 0, 0, 0.24);
 }
@@ -57,10 +57,11 @@
 }
 
 .card__des {
-  font-size: 12px;
-  text-align: justify;
-  word-spacing: -2px;
-  text-justify: distribute;
+  font-size: 0.8rem;
+  text-align: center;
+  //word-spacing: -1px;
+  line-height: 1.2;
+  //text-justify: distribute;
 }
 .card__des span {
   display: block;
@@ -86,6 +87,7 @@
 }
 .list-facts {
   margin-top: 0.6rem;
+  text-align: left;
 }
 .list-facts li {
   margin-bottom: 1.6rem;
