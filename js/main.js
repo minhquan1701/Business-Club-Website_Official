@@ -65,8 +65,8 @@ window.addEventListener("DOMContentLoaded", () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           if (
-            entry.target.id === "about-us" ||
-            entry.target.id === "department"
+            entry.target.id === "department" ||
+            entry.target.id === "about-us"
           ) {
             /* console.log(entry.target.id);
             document.querySelector("#about").classList.add("nav-item--changed");*/
@@ -126,7 +126,6 @@ window.addEventListener("DOMContentLoaded", () => {
       .querySelector(".partnership-container__list--show")
       .classList.remove("partnership-container__list--show");
 
-    console.log(document.querySelector(`#link-${this.id}`));
     document
       .querySelector(`#link-${this.id}`)
       .classList.add("partnership-container__list--show");

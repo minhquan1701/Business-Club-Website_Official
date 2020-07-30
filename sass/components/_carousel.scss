@@ -16,15 +16,81 @@
 }
 
 .navigator__item {
+  position: relative;
+  margin-bottom: 0.8rem;
   font-size: 1.2rem;
   text-transform: uppercase;
   color: mix(white, $background-black, 20);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+.navigator__item:not(.navigator__item--active)::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid $background-white;
+  background-color: transparent;
+  animation: ping 1s ease-in-out infinite reverse both;
+}
+@keyframes ping {
+  0% {
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+    opacity: 0.8;
+  }
+
+  80% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.navigator__item:not(.navigator__item--active)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid $background-white;
+  animation: ping-reverse 1s ease-in-out infinite both;
+}
+
+@keyframes ping-reverse {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    border: 3px solid #fff;
+    background-color: transparent;
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
 
 .navigator__item--active {
-  padding: 0.5rem 0;
+  //padding: 0.5rem 0;
   font-size: 2rem;
   text-shadow: 0px 4px 7px rgba($color: #000000, $alpha: 0.25);
 }
@@ -37,7 +103,7 @@
   position: absolute;
   display: grid;
 
-  //top: 3rem;
+  top: 3rem;
   left: 4rem;
   overflow-wrap: break-word;
   grid-template-columns: repeat(6, 1fr);
@@ -55,14 +121,6 @@
   transition: opacity 0.3s ease-in-out;
 
   @include set-width-n-height(100%, 100%);
-
-  &:nth-of-type(1) .partnership-item:nth-of-type(13) {
-    width: 99px;
-  }
-
-  &:nth-of-type(2) {
-    top: 3rem;
-  }
 }
 
 .partnership-item {
