@@ -1,5 +1,5 @@
 .timeline-projects {
-  @include set-width-n-height(100%, 90vh);
+  @include set-width-n-height(100%, 100vh);
   position: relative;
   background: url("../img/background-project.jpeg") center top/cover;
 
@@ -18,6 +18,7 @@
   top: 40px;
   left: 50%;
   color: $background-white;
+  transition: all 0.2s ease-in-out;
   //transform: translate(-50%)
 }
 
@@ -29,7 +30,13 @@
   align-items: center;
   height: 100%;
 }
+.timeline {
+  position: absolute;
+  left: -300px;
+  opacity: 0;
 
+  pointer-events: none;
+}
 %dot-template {
   content: "";
   position: absolute;
@@ -96,10 +103,6 @@
   bottom: 45px;
 }
 
-.timeline {
-  margin-right: 35%;
-}
-
 .timeline__item:first-child {
   background-color: transparent;
 }
@@ -125,12 +128,6 @@
     width: 100%;
     height: 3px;
   }
-
-  /* &:hover {
-    background-color: $dark-red;
-    top: calc(100% + 25px);
-    left: calc(100% - 5px);
-  } */
 }
 
 .timeline__item__content__des {
@@ -143,4 +140,139 @@
   &:hover {
     @include set-bg-n-text-color($background-white);
   }
+}
+
+.carousel-projects-container {
+  opacity: 0;
+  pointer-events: none;
+  position: relative;
+  display: grid;
+  width: 98vw;
+  grid-template-columns: repeat(5, 230px);
+  grid-gap: 2.2rem;
+  //place-items: center;
+
+  justify-content: center;
+  //align-items: center;
+  white-space: initial;
+}
+.carousel-projects-toggler {
+  position: absolute;
+  color: $background-white;
+  margin-right: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  bottom: 15%;
+  right: 2%;
+  &:hover {
+    color: $primary-red;
+  }
+}
+.carousel-projects-item {
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 310px;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background-color: #000;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 310px;
+    left: 0;
+    background-color: $background-white;
+    height: 3px;
+    width: 100%;
+  }
+
+  &:hover {
+    &::before {
+      height: 310px;
+      top: 0;
+      opacity: 0.8;
+    }
+
+    & .carousel-projects-item__des {
+      opacity: 1;
+    }
+  }
+}
+
+.carousel-projects-item__des {
+  @include set-width-n-height(100%, 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 1.2rem;
+  color: $background-white;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.4s ease-in-out;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.carousel-projects-item__btn {
+  position: relative;
+  //@include set-width-n-height(100%, 50px);
+  width: 100%;
+
+  margin-top: 1rem;
+  color: $background-white;
+  border: 3px solid rgb(255, 255, 255);
+
+  padding: 0.7rem 0.8rem;
+  text-align: center;
+  //cursor: pointer;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    transition: all 0.2s ease-in-out;
+    color: rgb(255, 255, 255);
+  }
+  &::before {
+    top: -3px;
+    left: -3px;
+    border-width: 3px 0 0 3px;
+  }
+  &::after {
+    right: -3px;
+    bottom: -3px;
+    border-width: 0 3px 3px 0;
+  }
+}
+
+.carousel-projects-item__btn h5 {
+  margin-bottom: 0.3rem;
+}
+.carousel-projects-item__btn p {
+  font-size: 0.7rem;
+}
+
+.carousel-projects-item img {
+  display: block;
+  @include set-width-n-height(100%, 310px);
+  position: relative;
+}
+
+.timeline-projects--showed {
+  opacity: 1;
+  pointer-events: initial;
+
+  transition: opacity 0.4s ease-in-out;
 }

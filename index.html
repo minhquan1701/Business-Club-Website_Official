@@ -28,37 +28,49 @@
           <a href="."
             ><img src="img/bc-logo.png" alt="bc-logo" class="logo"
           /></a>
-          <ul class="nav-items">
-            <li class="nav-item desktop">
-              <a href="#about-us" class="nav-link" id="about"
-                >about <i class="fas fa-chevron-down"></i
-              ></a>
-              <div class="nav-item__sub">
-                <a href="#about-us" id="nav-link--about-us" class="nav-link"
-                  >about us</a
-                >
+          <div class="menu-btn">
+            <span class="menu-btn__burger"> </span>
+          </div>
 
-                <a href="#department" id="nav-link--department" class="nav-link"
-                  >our departments</a
+          <div class="nav">
+            <ul class="nav-items">
+              <li class="nav-item desktop">
+                <a href="#about-us" class="nav-link" id="about"
+                  >about <i class="fas fa-chevron-down"></i
+                ></a>
+                <div class="nav-item__sub">
+                  <a href="#about-us" id="nav-link--about-us" class="nav-link"
+                    >about us</a
+                  >
+
+                  <a
+                    href="#department"
+                    id="nav-link--department"
+                    class="nav-link"
+                    >our departments</a
+                  >
+                </div>
+              </li>
+              <li class="nav-item desktop">
+                <a href="#projects" id="nav-link--projects" class="nav-link"
+                  >projects</a
                 >
-              </div>
-            </li>
-            <li class="nav-item desktop">
-              <a href="#projects" id="nav-link--projects" class="nav-link"
-                >projects</a
-              >
-            </li>
-            <li class="nav-item desktop">
-              <a href="#partnership" id="nav-link--partnership" class="nav-link"
-                >partnership</a
-              >
-            </li>
-            <li class="nav-item desktop">
-              <a href="#contact" id="nav-link--contact" class="nav-link"
-                >contact</a
-              >
-            </li>
-          </ul>
+              </li>
+              <li class="nav-item desktop">
+                <a
+                  href="#partnership"
+                  id="nav-link--partnership"
+                  class="nav-link"
+                  >partnership</a
+                >
+              </li>
+              <li class="nav-item desktop">
+                <a href="#contact" id="nav-link--contact" class="nav-link"
+                  >contact</a
+                >
+              </li>
+            </ul>
+          </div>
         </nav>
         <div class="hero">
           <div class="hero__content">
@@ -154,6 +166,7 @@
                       class="icon"
                       src="img/hr-icon/recruitment-icon.svg"
                       alt="recruitment-icon"
+                      loading="lazy"
                     />
                     Recruitment
                   </li>
@@ -162,6 +175,7 @@
                       class="icon"
                       src="img/hr-icon/training-icon.svg"
                       alt="recruitment-icon"
+                      loading="lazy"
                     />
                     Training & Development
                   </li>
@@ -170,6 +184,7 @@
                       class="icon"
                       src="img/hr-icon/welfare-icon.svg"
                       alt="welfare-icon"
+                      loading="lazy"
                     />
                     Welfare
                   </li>
@@ -199,6 +214,7 @@
                       class="icon"
                       src="img/hr-icon/recruitment-icon.svg"
                       alt="recruitment-icon"
+                      loading="lazy"
                     />
                     Recruitment
                   </li>
@@ -280,10 +296,10 @@
       </section>
 
       <section id="projects" class="timeline-projects">
-        <h2 class="title">OUR <span class="style-red">Major Projects</span></h2>
+        <h2 class="title">Our <span class="style-red">Major Projects</span></h2>
 
         <div class="timeline-container">
-          <ol class="timeline">
+          <ol class="timeline timeline-projects--showed">
             <li class="timeline__item">
               <img
                 src="img/projects-logo/marcha_logo.png"
@@ -311,6 +327,7 @@
                 src="img/projects-logo/teacher_day_logo.png"
                 alt="Teacher's Day"
                 class="timeline__item__logo"
+                loading="lazy"
               />
               <div class="timeline__item__content">
                 <p class="timeline__item__content__des">
@@ -320,7 +337,7 @@
                   top leaders.
                 </p>
                 <a
-                  href="http://marketingchallengers.org/"
+                  href="https://www.facebook.com/RMITTeachersDay"
                   target="blank"
                   class="btn btn-small timeline__item__content__btn"
                   >Explore <i class="fas fa-chevron-right"></i
@@ -333,6 +350,7 @@
                 src="img/projects-logo/logis_logo.png"
                 alt="The Logisticom"
                 class="timeline__item__logo"
+                loading="lazy"
               />
               <div class="timeline__item__content">
                 <p class="timeline__item__content__des">
@@ -342,7 +360,7 @@
                   top leaders.
                 </p>
                 <a
-                  href="http://marketingchallengers.org/"
+                  href="https://www.thelogisticom.com/"
                   target="blank"
                   class="btn btn-small timeline__item__content__btn"
                   >Explore <i class="fas fa-chevron-right"></i
@@ -350,6 +368,144 @@
               </div>
             </li>
           </ol>
+
+          <h3 class="carousel-projects-toggler">
+            Other <span style="text-transform: initial;"> Projects </span>
+            <i class="fas fa-chevron-right"></i>
+          </h3>
+
+          <div class="carousel-projects-container">
+            <div>
+              <div class="carousel-projects-item">
+                <img
+                  src="img/projects-logo/depression-campaign.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+
+                <p class="carousel-projects-item__des">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
+                  labore eligendi eum aspernatur autem laudantium debitis vitae
+                  quia voluptate cum? ...<a
+                    style="color: white;"
+                    class="style-bold"
+                    href="https://www.facebook.com/hashtag/imfinewiththedark"
+                    target="_blank"
+                    >More</a
+                  >
+                </p>
+              </div>
+
+              <div class="carousel-projects-item__btn">
+                <h5>I'm fine with the dark</h5>
+                <p>Marketing Campaign 2018</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="carousel-projects-item">
+                <img
+                  src="img/projects-logo/recruitment-day.png"
+                  alt=""
+                  loading="lazy"
+                />
+
+                <p class="carousel-projects-item__des">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
+                  labore eligendi eum aspernatur autem laudantium debitis vitae
+                  quia voluptate cum? ...<a
+                    style="color: white;"
+                    class="style-bold"
+                    href="https://www.facebook.com/hashtag/chi%E1%BA%BFnd%E1%BB%8Bchquy%E1%BA%BFtth%E1%BA%AFng"
+                    target="_blank"
+                    >More</a
+                  >
+                </p>
+              </div>
+              <div class="carousel-projects-item__btn">
+                <h5>Recruitment Day</h5>
+                <p>RMIT Community Project 2019</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="carousel-projects-item">
+                <img
+                  src="img/projects-logo/personal-edge.png"
+                  alt=""
+                  loading="lazy"
+                />
+
+                <p class="carousel-projects-item__des">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
+                  labore eligendi eum apernatur autem laudantium debitis vitae
+                  quia voluptate cum? ...<a
+                    style="color: white;"
+                    class="style-bold"
+                    href="https://www.facebook.com/RMITBusinessClub/posts/10157636796249558"
+                    target="_blank"
+                    >More</a
+                  >
+                </p>
+              </div>
+              <div class="carousel-projects-item__btn">
+                <h5>Personal Edge</h5>
+                <p>RMIT Community Project 2019</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="carousel-projects-item">
+                <img
+                  src="img/projects-logo/comp-tour.png"
+                  alt=""
+                  loading="lazy"
+                />
+
+                <p class="carousel-projects-item__des">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
+                  labore eligendi eum apernatur autem laudantium debitis vitae
+                  quia voluptate cum? ...<a
+                    style="color: white;"
+                    class="style-bold"
+                    href="https://www.facebook.com/RMITBusinessClub/posts/10157636796249558"
+                    target="_blank"
+                    >More</a
+                  >
+                </p>
+              </div>
+              <div class="carousel-projects-item__btn">
+                <h5>Company Tour</h5>
+                <p>RMIT Community Project 2019</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="carousel-projects-item">
+                <img
+                  src="img/projects-logo/mkt-campaign-B2020.png"
+                  alt=""
+                  loading="lazy"
+                />
+
+                <p class="carousel-projects-item__des">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
+                  labore eligendi eum aspernatur autem laudantium debitis vitae
+                  quia voluptate cum? ...<a
+                    style="color: white;"
+                    class="style-bold"
+                    href="https://www.facebook.com/hashtag/chi%E1%BA%BFnd%E1%BB%8Bchquy%E1%BA%BFtth%E1%BA%AFng"
+                    target="_blank"
+                    >More</a
+                  >
+                </p>
+              </div>
+              <div class="carousel-projects-item__btn">
+                <h5>Chiến Dịch Quyết Thắng</h5>
+                <p>Marketing Campaign 2020</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -377,70 +533,100 @@
             class="partnership-container__list partnership-container__list--show"
           >
             <img
+              style="grid-area: eleven;"
               class="partnership-item"
-              src="img/coporate-logo/ABInBev.png"
+              src="img/coporate-logo/Loship.png"
               alt=""
+              loading="lazy"
             />
 
             <img
-              style="margin-top: 1.3rem;"
+              style="margin-top: 1.3rem; grid-area: twelve;"
               class="partnership-item"
               src="img/coporate-logo/DHL.png"
               alt=""
+              loading="lazy"
             />
             <img
               style="width: 175px;"
               class="partnership-item"
               src="img/coporate-logo/Kuehne-Nagel.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/coporate-logo/L'oreal.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/coporate-logo/Laiday.png"
               alt=""
+              loading="lazy"
             />
             <img
-              style="width: 130px;"
+              style="width: 130px; grid-area: seven;"
               class="partnership-item"
               src="img/coporate-logo/Mercedes-Benz.png"
               alt=""
+              loading="lazy"
             />
             <img
+              style="grid-area: six;"
               class="partnership-item"
               src="img/coporate-logo/Peugeot.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
-              src="img/coporate-logo/Loship.png"
+              src="img/coporate-logo/ABInBev.png"
               alt=""
+              loading="lazy"
             />
             <img
+              style="grid-area: two; justify-self: start;"
               class="partnership-item"
               src="img/coporate-logo/Student-council.jpg"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/coporate-logo/Bloomer.png"
               alt=""
+              loading="lazy"
             />
             <img
-              style="width: 120px;"
+              style="grid-area: one;"
               class="partnership-item"
-              src="img/coporate-logo/Toyota.png"
+              src="img/coporate-logo/Coca-Cola.png"
               alt=""
+              loading="lazy"
             />
+            <img
+              style="grid-area: thirdteen;"
+              class="partnership-item"
+              src="img/coporate-logo/Decathlon.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <img
+              style="grid-area: nine; justify-self: center;"
+              class="partnership-item"
+              src="img/coporate-logo/lazada-elogistics.png"
+              alt=""
+              loading="lazy"
+            />
+
             <img
               style="width: 75px;"
               class="partnership-item"
               src="img/coporate-logo/Unilever.png"
               alt=""
+              loading="lazy"
             />
           </div>
 
@@ -452,48 +638,57 @@
               class="partnership-item"
               src="img/media-logo/advertising-vietnam.jpg"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/media-logo/agency-life.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/media-logo/brands-vietnam.png"
               alt=""
+              loading="lazy"
             />
             <img
               style="width: 120px;"
               class="partnership-item"
               src="img/media-logo/dien-quan-network.png"
               alt=""
+              loading="lazy"
             />
             <img
               style="width: 120px;"
               class="partnership-item"
               src="img/media-logo/Isao-vn.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/media-logo/vietnam-logistics-review.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/media-logo/vn-ngay-nay.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/media-logo/ybox-vn.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/media-logo/yeah-1.png"
               alt=""
+              loading="lazy"
             />
           </div>
 
@@ -506,53 +701,63 @@
               class="partnership-item"
               src="img/strategic-logo/Aim-Academy.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/strategic-logo/CEL-Consulting.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/strategic-logo/Chin-media.png"
               alt=""
+              loading="lazy"
             />
             <img
               style="width: 115px;"
               class="partnership-item"
               src="img/strategic-logo/DMS-Academy.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/strategic-logo/Nielsen.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/strategic-logo/Tomorrow-Marketers.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/strategic-logo/Institute-of-DM.png"
               alt=""
+              loading="lazy"
             />
             <img
               style="width: 140px;"
               class="partnership-item"
               src="img/strategic-logo/Redder-x-Dentsu-Logo.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/strategic-logo/VILAS.png"
               alt=""
+              loading="lazy"
             />
             <img
               class="partnership-item"
               src="img/strategic-logo/Lion-n-Lion.png"
               alt=""
+              loading="lazy"
             />
           </div>
         </div>
@@ -560,20 +765,45 @@
 
       <section class="testimonial">
         <div class="testimonial-wraper">
-          <div class="testimonial-container testimonial-container--show">
+          <div class="testimonial-container testimonial-container--show 1">
             <div class="testimonial-card testimonial-card--clicked">
-              <img class="quote-sign" src="img/quote-icon.png" alt="" />
+              <img
+                class="quote-sign"
+                src="img/quote-icon.png"
+                alt=""
+                loading="lazy"
+              />
               <div class="testimonial-card__name-tag">
-                <div class="testimonial-card__name-tag__ava">
-                  <!-- <img
-                    class="testimonial-card__name-tag__ava"
-                    src="img/quan.JPG"
-                    alt=""
-                  /> -->
-                </div>
+                <div class="testimonial-card__name-tag__ava"></div>
                 <div class="testimonial-card__name-tag__info">
                   <h3 class="testimonial-card__name-tag__info__name style-bold">
-                    Tran Huynh Mai Ngoc
+                    Melvin Fernando
+                  </h3>
+                  <p class="testimonial-card__name-tag__info__title">
+                    Club Advisor
+                  </p>
+                </div>
+              </div>
+              <p class="testimonial-card__quote">
+                RMIT Business Club is a student club that provides an
+                opportunity for students to create and experience
+                transformational changes during their University life. It’s a
+                place for students to learn new skills, expand our network and
+                very importantly, understand ourselves better!
+              </p>
+            </div>
+            <div class="testimonial-card">
+              <img
+                class="quote-sign"
+                src="img/quote-icon.png"
+                alt=""
+                loading="lazy"
+              />
+              <div class="testimonial-card__name-tag">
+                <div class="testimonial-card__name-tag__ava"></div>
+                <div class="testimonial-card__name-tag__info">
+                  <h3 class="testimonial-card__name-tag__info__name style-bold">
+                    Trần Huỳnh Mai Ngọc
                   </h3>
                   <p class="testimonial-card__name-tag__info__title">
                     President 2019-2020
@@ -588,15 +818,80 @@
               </p>
             </div>
             <div class="testimonial-card">
-              <img class="quote-sign" src="img/quote-icon.png" alt="" />
+              <img
+                class="quote-sign"
+                src="img/quote-icon.png"
+                alt=""
+                loading="lazy"
+              />
               <div class="testimonial-card__name-tag">
                 <div class="testimonial-card__name-tag__ava"></div>
                 <div class="testimonial-card__name-tag__info">
                   <h3 class="testimonial-card__name-tag__info__name style-bold">
-                    Tran Huynh Mai Ngoc
+                    Nguyễn Hào Kiệt
+                  </h3>
+                  <p
+                    style="font-size: 0.7rem;"
+                    class="testimonial-card__name-tag__info__title"
+                  >
+                    Manager of Human Resources Department 2019-2020
+                  </p>
+                </div>
+              </div>
+              <p class="testimonial-card__quote">
+                This organisation offers me unique opportunities for my personal
+                developments through departments’ work and national scale
+                projects that I can find nowhere else. At the same time it helps
+                me to make more friends who I can share and discuss about
+                everything of life, so you might call BC a club, but I call it
+                home.
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-container 2">
+            <div class="testimonial-card testimonial-card--clicked">
+              <img
+                class="quote-sign"
+                src="img/quote-icon.png"
+                alt=""
+                loading="lazy"
+              />
+              <div class="testimonial-card__name-tag">
+                <div class="testimonial-card__name-tag__ava"></div>
+                <div class="testimonial-card__name-tag__info">
+                  <h3 class="testimonial-card__name-tag__info__name style-bold">
+                    Nguyễn Quý Ngọc
+                  </h3>
+                  <p
+                    style="font-size: 0.7rem;"
+                    class="testimonial-card__name-tag__info__title"
+                  >
+                    Manager of Marketing Department 2019-2020
+                  </p>
+                </div>
+              </div>
+              <p class="testimonial-card__quote">
+                Luckily, I’ve found my soulmates who accepted the true me and
+                always stayed by my side (just like the tasks). Since joining
+                this club, sad and good stories have happened. However, I don’t
+                regret it because BC is a life-changing experience for me.
+              </p>
+            </div>
+            <div class="testimonial-card">
+              <img
+                class="quote-sign"
+                src="img/quote-icon.png"
+                alt=""
+                loading="lazy"
+              />
+              <div class="testimonial-card__name-tag">
+                <div class="testimonial-card__name-tag__ava"></div>
+                <div class="testimonial-card__name-tag__info">
+                  <h3 class="testimonial-card__name-tag__info__name style-bold">
+                    Nguyễn Ngọc Phương Linh
                   </h3>
                   <p class="testimonial-card__name-tag__info__title">
-                    President 2019-2020
+                    Manager of R&D Department 2019-2020
                   </p>
                 </div>
               </div>
@@ -608,15 +903,20 @@
               </p>
             </div>
             <div class="testimonial-card">
-              <img class="quote-sign" src="img/quote-icon.png" alt="" />
+              <img
+                class="quote-sign"
+                src="img/quote-icon.png"
+                alt=""
+                loading="lazy"
+              />
               <div class="testimonial-card__name-tag">
                 <div class="testimonial-card__name-tag__ava"></div>
                 <div class="testimonial-card__name-tag__info">
                   <h3 class="testimonial-card__name-tag__info__name style-bold">
-                    Tran Huynh Mai Ngoc
+                    Nguyễn Ngọc Thanh Trúc
                   </h3>
                   <p class="testimonial-card__name-tag__info__title">
-                    President 2019-2020
+                    Leader of Marketing Content Team
                   </p>
                 </div>
               </div>
@@ -628,17 +928,22 @@
               </p>
             </div>
           </div>
-          <div class="testimonial-container">
-            <div class="testimonial-card testimonial-card--clicked">
-              <img class="quote-sign" src="img/quote-icon.png" alt="" />
+          <div class="testimonial-container 3">
+            <div class="testimonial-card">
+              <img
+                class="quote-sign"
+                src="img/quote-icon.png"
+                alt=""
+                loading="lazy"
+              />
               <div class="testimonial-card__name-tag">
                 <div class="testimonial-card__name-tag__ava"></div>
                 <div class="testimonial-card__name-tag__info">
                   <h3 class="testimonial-card__name-tag__info__name style-bold">
-                    Hoang Minh Quan
+                    Uyên Nhã
                   </h3>
                   <p class="testimonial-card__name-tag__info__title">
-                    President 2019-2020
+                    Former Executive Board Member
                   </p>
                 </div>
               </div>
@@ -650,15 +955,20 @@
               </p>
             </div>
             <div class="testimonial-card">
-              <img class="quote-sign" src="img/quote-icon.png" alt="" />
+              <img
+                class="quote-sign"
+                src="img/quote-icon.png"
+                alt=""
+                loading="lazy"
+              />
               <div class="testimonial-card__name-tag">
                 <div class="testimonial-card__name-tag__ava"></div>
                 <div class="testimonial-card__name-tag__info">
                   <h3 class="testimonial-card__name-tag__info__name style-bold">
-                    Hoang Minh Quan
+                    Lê Thành Đạt
                   </h3>
                   <p class="testimonial-card__name-tag__info__title">
-                    President 2019-2020
+                    Former HR member
                   </p>
                 </div>
               </div>
@@ -670,15 +980,20 @@
               </p>
             </div>
             <div class="testimonial-card">
-              <img class="quote-sign" src="img/quote-icon.png" alt="" />
+              <img
+                class="quote-sign"
+                src="img/quote-icon.png"
+                alt=""
+                loading="lazy"
+              />
               <div class="testimonial-card__name-tag">
                 <div class="testimonial-card__name-tag__ava"></div>
                 <div class="testimonial-card__name-tag__info">
                   <h3 class="testimonial-card__name-tag__info__name style-bold">
-                    Hoang Minh Quan
+                    Hoàng Minh Quân
                   </h3>
                   <p class="testimonial-card__name-tag__info__title">
-                    President 2019-2020
+                    Former Maketing Member
                   </p>
                 </div>
               </div>
@@ -691,11 +1006,23 @@
             </div>
           </div>
         </div>
+
+        <i
+          class="testimonial-btn testimonial-btn--next fas fa-chevron-right fa-2x"
+        ></i>
+        <i
+          class="testimonial-btn testimonial-btn--prev fas fa-chevron-left fa-2x"
+        ></i>
       </section>
 
       <footer id="contact">
         <div class="footer-logo">
-          <img src="img/bc-logo.png" alt="bc-logo" class="logo" />
+          <img
+            src="img/bc-logo.png"
+            alt="bc-logo"
+            class="logo"
+            loading="lazy"
+          />
           <p>&copy; Copyright 2020. All rights reserved</p>
         </div>
 
@@ -719,13 +1046,13 @@
             class="facebook-logo"
             href="https://www.facebook.com/RMITBusinessClub/"
             target="_blank"
-            ><img src="img/facebook-icon.svg" alt=""
+            ><img src="img/facebook-icon.svg" alt="" loading="lazy"
           /></a>
           <a
             class="ins-logo"
             href="https://www.instagram.com/businessclub.rmit/?hl=vi"
             target="_blank"
-            ><img src="img/ins-icon.svg" alt=""
+            ><img src="img/ins-icon.svg" alt="" loading="lazy"
           /></a>
         </div>
       </footer>

@@ -15,6 +15,34 @@ window.addEventListener("DOMContentLoaded", () => {
   const closeBtnList = document.querySelectorAll(".close-btn");
   const navigation = document.querySelector(".nav-top");
   const navItemList = document.querySelectorAll(".nav-link");
+  const navItems = document.querySelectorAll(".nav-item");
+  const menuNav = document.querySelector(".nav-items");
+  const nav = document.querySelector(".nav");
+  const carouselProjectsToggler = document.querySelector(
+    ".carousel-projects-toggler"
+  );
+  const menuBtn = document.querySelector(".menu-btn");
+  const hamburger = document.querySelector(".menu-btn__burger");
+
+  let showMenu = false;
+
+  menuBtn.addEventListener("click", toggleMenu);
+
+  function toggleMenu() {
+    if (!showMenu) {
+      hamburger.classList.add("open");
+      nav.classList.add("open");
+      menuNav.classList.add("open");
+      navItems.forEach((item) => item.classList.add("open"));
+      showMenu = true;
+    } else {
+      hamburger.classList.remove("open");
+      nav.classList.remove("open");
+      menuNav.classList.remove("open");
+      navItems.forEach((item) => item.classList.remove("open"));
+      showMenu = false;
+    }
+  }
 
   deptBtnList.forEach((deptBtn) => {
     deptBtn.addEventListener("click", () => {
@@ -29,34 +57,29 @@ window.addEventListener("DOMContentLoaded", () => {
       closeBtn.parentElement.previousElementSibling.style.display = "block";
     });
   });
+  let isNavHovered = false;
 
-  /* const navObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          navigation.classList.add("nav-change");
-        } else {
-          navigation.classList.remove("nav-change");
-        }
-      });
-    },
-    {
-      threshold: 1,
-      rootMargin: "-100px 0px 0px 0px",
+  const isHover = (e) => e.parentElement.querySelector(":hover") === e;
+
+  document.addEventListener("mousemove", function checkHover() {
+    const hovered = isHover(navigation);
+    if (hovered !== checkHover.hovered) {
+      isNavHovered = hovered ? true : false;
+      checkHover.hovered = hovered;
     }
-  );
- */
+  });
 
   window.onscroll = function () {
+    let winpos = window.scrollY;
     navigation.style.opacity = 1;
+    navigation.classList.toggle("nav-change", winpos > 0);
 
-    navigation.classList.add("nav-change");
-    if (window.scrollY === 0) {
-      navigation.classList.remove("nav-change");
-    }
+    setTimeout(() => {
+      if (winpos == window.scrollY && winpos != 0 && !isNavHovered) {
+        navigation.style.opacity = 0;
+      }
+    }, 1000);
   };
-
-  /* navObserver.observe(document.querySelector(".headline")); */
 
   /********Nav item's color change on scroll*******/
 
@@ -68,18 +91,7 @@ window.addEventListener("DOMContentLoaded", () => {
             entry.target.id === "department" ||
             entry.target.id === "about-us"
           ) {
-            /* console.log(entry.target.id);
-            document.querySelector("#about").classList.add("nav-item--changed");*/
-            console.log(
-              document
-                .querySelector(`#nav-link--${entry.target.id}`)
-                .parentElement.previousElementSibling.classList.add(
-                  "nav-item--changed"
-                )
-            );
-            document
-              .querySelector(`#nav-link--${entry.target.id}`)
-              .parentElement.parentElement.classList.add("nav-item--changed");
+            document.querySelector("#about").classList.add("nav-item--changed");
           }
           document
             .querySelector(`#nav-link--${entry.target.id}`)
@@ -110,9 +122,39 @@ window.addEventListener("DOMContentLoaded", () => {
     navItem.addEventListener("click", () => {
       setTimeout(() => {
         navigation.style.opacity = 0;
-      }, 1000);
+      }, 3000);
     })
   );
+
+  /**********PROJECTS TOGGLE***********/
+  function changeContentWithin() {
+    let styleRedContent = carouselProjectsToggler.childNodes[1].textContent;
+    let nonstyleRedContent = carouselProjectsToggler.childNodes[0].textContent;
+    let mainProjectsTitle = document.querySelector(".timeline-projects .title");
+
+    carouselProjectsToggler.textContent =
+      mainProjectsTitle.childNodes[0].textContent;
+    carouselProjectsToggler.innerHTML +=
+      '<span style="text-transform: initial;">' +
+      mainProjectsTitle.childNodes[1].textContent +
+      " </span>" +
+      ' <i class="fas fa-chevron-right"></i>';
+
+    mainProjectsTitle.textContent = nonstyleRedContent;
+
+    mainProjectsTitle.innerHTML +=
+      '<span class = "style-red">' + styleRedContent + "</span";
+  }
+  carouselProjectsToggler.addEventListener("click", () => {
+    changeContentWithin();
+
+    document
+      .querySelector(".timeline")
+      .classList.toggle("timeline-projects--showed");
+    document
+      .querySelector(".carousel-projects-container")
+      .classList.toggle("timeline-projects--showed");
+  });
 
   /**********CASOUREL'S NAVIGATOR EVENT LISTENTER***********/
   function activateNavigator() {
@@ -136,11 +178,53 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   /******* AUTOMATIC TESTIMONIAL SLIDES********/
-  setInterval(changeSlide, 5000);
+
+  let nextBtn = document.querySelector(".testimonial-btn--next");
+  let prevBtn = document.querySelector(".testimonial-btn--prev");
+
+  function moveToPrevSlide() {
+    let currentShowedContainer = document.querySelector(
+      ".testimonial-container.testimonial-container--show"
+    );
+    currentShowedContainer.classList.remove("testimonial-container--show");
+
+    if (currentShowedContainer.previousElementSibling) {
+      currentShowedContainer.previousElementSibling.classList.add(
+        "testimonial-container--show"
+      );
+    } else {
+      document
+        .querySelector(".testimonial-wraper")
+        .children[2].classList.add("testimonial-container--show");
+    }
+  }
 
   function changeSlide() {
-    document.querySelectorAll(".testimonial-container").forEach((container) => {
-      container.classList.toggle("testimonial-container--show");
-    });
+    let currentShowedContainer = document.querySelector(
+      ".testimonial-container.testimonial-container--show"
+    );
+    currentShowedContainer.classList.remove("testimonial-container--show");
+
+    if (currentShowedContainer.nextElementSibling) {
+      currentShowedContainer.nextElementSibling.classList.add(
+        "testimonial-container--show"
+      );
+    } else {
+      document
+        .querySelector(".testimonial-wraper")
+        .children[0].classList.add("testimonial-container--show");
+    }
   }
+  let slideAutoRunning = setInterval(changeSlide, 5000);
+
+  nextBtn.addEventListener("click", (e) => {
+    changeSlide();
+    clearInterval(slideAutoRunning);
+    slideAutoRunning = setInterval(changeSlide, 5000);
+  });
+  prevBtn.addEventListener("click", (e) => {
+    moveToPrevSlide();
+    clearInterval(slideAutoRunning);
+    slideAutoRunning = setInterval(changeSlide, 5000);
+  });
 })();

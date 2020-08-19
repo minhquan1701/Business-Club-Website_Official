@@ -18,6 +18,61 @@
   color: $primary-red;
 }
 
+.menu-btn {
+  position: absolute;
+  z-index: 1;
+  right: 3rem;
+  top: 2rem;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+  visibility: hidden;
+
+  &__burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 3px;
+    background: $background-white;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      width: 28px;
+      height: 3px;
+      background: $background-white;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      width: 28px;
+      height: 3px;
+
+      background: $background-white;
+    }
+    &.open {
+      transform: rotate(720deg);
+      background: transparent;
+      transition: all 0.5s ease-in-out;
+
+      &::before {
+        transform: rotate(45deg) translate(5px, 8px);
+      }
+      &::after {
+        width: 28px;
+        transform: rotate(-45deg) translate(3px, -7px);
+      }
+    }
+  }
+
+  @include for-tablet-landscape-down {
+    visibility: visible;
+  }
+}
+
 .nav-top {
   display: flex;
   position: fixed;
@@ -28,6 +83,7 @@
   padding-top: 1rem;
   width: 100%;
   height: 90px;
+  will-change: transform;
 
   .nav-items {
     position: relative;
@@ -38,6 +94,19 @@
       display: inline-block;
       margin-right: 1.2rem;
       padding: 1.3rem 0.7rem;
+
+      @include for-tablet-landscape-down {
+        display: block;
+        text-align: center;
+        transform: translateX(100vw); // starting point. From the right
+        transition: all 0.5s ease-in-out;
+        padding: 0.7rem 0;
+        width: 100%;
+
+        &.open {
+          transform: translateX(0);
+        }
+      }
     }
     .nav-item__sub {
       display: none;
@@ -49,6 +118,7 @@
       padding: 0.5rem 1rem 1.2rem 0.5rem;
 
       .nav-link {
+        display: block;
         border-bottom: 1px solid black;
         padding: 0.5rem 0 0.3rem 0;
         color: $text-black;
@@ -57,6 +127,58 @@
       .nav-link:last-child {
         border-bottom: none;
       }
+
+      @include for-tablet-landscape-down {
+        position: inherit;
+
+        @include set-bg-n-text-color($background-white);
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        width: 100%;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    @include for-tablet-landscape-down {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      background: $background-black;
+
+      padding-right: 1rem;
+      transform: translateY(-100%); // starting point of the animation.
+      transition: all 0.5s ease-in-out;
+      &.open {
+        transform: translateY(0);
+      }
+    }
+
+    @include for-tablet-landscape-down {
+      @for $i from 1 through 4 {
+        .nav-item:nth-child(#{$i}) {
+          transition-delay: ($i * 0.1s) +0.17s;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  @include for-tablet-landscape-down {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    opacity: 0.98;
+    visibility: hidden;
+    &.open {
+      visibility: visible;
     }
   }
 }
@@ -69,26 +191,16 @@
     left: 0;
     transition: opacity 0.5s ease-in-out;
     opacity: 1;
+
+    @include for-tablet-landscape-down {
+      max-height: 7rem;
+    }
   }
 }
 
 //Navigation displays differently on scroll on big screens.
 .nav-change {
   background-color: rgba($color: $background-black, $alpha: 0.9);
-  opacity: 1;
-  //@include set-bg-txt_clr($text-color);
-
-  /* .nav-item > .nav-link {
-    color: $white-smoke;
-  }
- */
-  /* .nav-item:hover {
-    border-bottom: none !important;
-
-    & > .nav-link {
-      color: $primary-color;
-    }
-  } */
 }
 .nav-item--changed {
   color: $primary-red !important;
