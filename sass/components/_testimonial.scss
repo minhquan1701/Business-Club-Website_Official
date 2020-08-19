@@ -23,19 +23,21 @@
   transition: all 0.5s ease-in-out;
 }
 .testimonial-card {
-  max-height: 600px;
   border-radius: 20px;
   @include set-bg-n-text-color($white-smoke);
   transition: all 0.3s ease-in-out;
-  padding: 2.5rem 0.3rem 7rem 1.5rem;
-  //cursor: pointer;
-
-  /* &:hover {
-    @include set-bg-n-text-color($primary-red);
-  } */
 
   &:hover > .quote-sign {
     opacity: 1;
+  }
+  @include for-desktop-down {
+    height: 600px;
+    padding: 2.5rem 0.3rem 7rem 1.5rem;
+  }
+
+  @include for-big-desktop-up {
+    height: 750px;
+    padding: 2.5rem 2rem 6rem 2.1rem;
   }
 }
 .quote-sign {

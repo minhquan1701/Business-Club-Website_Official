@@ -26,12 +26,12 @@
   }
 }
 @mixin for-desktop-down {
-  @media (max-width: 1200px) {
+  @media (max-width: 1500px) {
     @content;
   }
 }
-@mixin for-big-desktop-down {
-  @media (max-width: 1800px) {
+@mixin for-big-desktop-up {
+  @media (min-width: 1700px) {
     @content;
   }
 }

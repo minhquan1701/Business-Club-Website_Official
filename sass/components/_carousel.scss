@@ -22,7 +22,7 @@
   text-transform: uppercase;
   color: mix(white, $background-black, 20);
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .navigator__item:not(.navigator__item--active)::before {
   content: "";
@@ -37,6 +37,7 @@
   border: 3px solid $background-white;
   background-color: transparent;
   animation: ping 1s ease-in-out infinite reverse both;
+  //animation-delay: 0.5s;
 }
 @keyframes ping {
   0% {
@@ -67,6 +68,7 @@
   border-radius: 50%;
   border: 3px solid $background-white;
   animation: ping-reverse 1s ease-in-out infinite both;
+  //animation-delay: 0.5s;
 }
 
 @keyframes ping-reverse {
@@ -90,7 +92,6 @@
 }
 
 .navigator__item--active {
-  //padding: 0.5rem 0;
   font-size: 2rem;
   text-shadow: 0px 4px 7px rgba($color: #000000, $alpha: 0.25);
 }
@@ -114,7 +115,7 @@
     "six six seven seven eight eight"
     "nine nine nine ten ten ten"
     "eleven eleven twelve twelve thirdteen thirdteen";
-  //grid-gap: rem;
+
   align-items: center;
   justify-content: center;
   opacity: 0;
