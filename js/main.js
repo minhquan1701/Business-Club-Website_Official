@@ -75,7 +75,7 @@ window.addEventListener("DOMContentLoaded", () => {
     navigation.classList.toggle("nav-change", winpos > 0);
 
     setTimeout(() => {
-      if (winpos == window.scrollY && winpos != 0 && !isNavHovered) {
+      if (winpos == window.scrollY && winpos > 0 && !isNavHovered) {
         navigation.style.opacity = 0;
       }
     }, 1000);
@@ -226,5 +226,9 @@ window.addEventListener("DOMContentLoaded", () => {
     moveToPrevSlide();
     clearInterval(slideAutoRunning);
     slideAutoRunning = setInterval(changeSlide, 5000);
+  });
+
+  document.querySelector(".logo").addEventListener("click", () => {
+    window.scrollTo(0, 720);
   });
 })();
