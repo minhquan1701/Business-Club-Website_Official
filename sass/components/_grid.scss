@@ -97,13 +97,48 @@
 }
 
 .hr-card {
-  background: url("../img/our-department/hr.JPG") center center/cover;
+  position: relative;
+
+  &::after {
+    content: "";
+    @include set-width-n-height(100%, 100%);
+    background: url("../img/our-department/hr.JPG") no-repeat center
+      center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    z-index: -1;
+  }
 }
+
 .mkt-card {
-  background: url("../img/our-department/mkt.jpeg") center center/cover;
+  position: relative;
+  &::after {
+    content: "";
+    @include set-width-n-height(100%, 100%);
+    background: url("../img/our-department/mkt.jpeg") no-repeat center
+      center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    z-index: -1;
+  }
 }
 .rd-card {
-  background: url("../img/our-department/rd.JPG") center center/cover;
+  position: relative;
+  &::after {
+    content: "";
+    @include set-width-n-height(100%, 100%);
+    background: url("../img/our-department/rd.JPG") no-repeat center
+      center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    z-index: -1;
+  }
 }
 
 .btn-lg {

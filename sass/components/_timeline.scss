@@ -1,7 +1,18 @@
 .timeline-projects {
   @include set-width-n-height(100%, 100vh);
   position: relative;
-  background: url("../img/background-project.jpeg") center top/cover;
+
+  &::after {
+    content: "";
+    @include set-width-n-height(100%, 100%);
+    background: url("../img/background-project.jpeg") no-repeat center
+      center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    z-index: -1;
+  }
 
   &::before {
     content: "";
