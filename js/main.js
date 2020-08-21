@@ -26,6 +26,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   let showMenu = false;
 
+  /*NAVIGATION ON SCROLL CHANGE*/
+
   menuBtn.addEventListener("click", toggleMenu);
 
   function toggleMenu() {
@@ -44,19 +46,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  deptBtnList.forEach((deptBtn) => {
-    deptBtn.addEventListener("click", () => {
-      deptBtn.style.display = "none";
-      deptBtn.nextElementSibling.classList.add("slide-up");
-    });
-  });
-
-  closeBtnList.forEach((closeBtn) => {
-    closeBtn.addEventListener("click", () => {
-      closeBtn.parentElement.classList.remove("slide-up");
-      closeBtn.parentElement.previousElementSibling.style.display = "block";
-    });
-  });
   let isNavHovered = false;
 
   const isHover = (e) => e.parentElement.querySelector(":hover") === e;
@@ -80,6 +69,28 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }, 1000);
   };
+
+  navItemList.forEach((navItem) =>
+    navItem.addEventListener("click", () => {
+      setTimeout(() => {
+        navigation.style.opacity = 0;
+      }, 3000);
+    })
+  );
+
+  deptBtnList.forEach((deptBtn) => {
+    deptBtn.addEventListener("click", () => {
+      deptBtn.style.display = "none";
+      deptBtn.nextElementSibling.classList.add("slide-up");
+    });
+  });
+
+  closeBtnList.forEach((closeBtn) => {
+    closeBtn.addEventListener("click", () => {
+      closeBtn.parentElement.classList.remove("slide-up");
+      closeBtn.parentElement.previousElementSibling.style.display = "block";
+    });
+  });
 
   /********Nav item's color change on scroll*******/
 
@@ -117,14 +128,6 @@ window.addEventListener("DOMContentLoaded", () => {
   navItemObserver.observe(document.querySelector("#projects"));
   navItemObserver.observe(document.querySelector("#partnership"));
   navItemObserver.observe(document.querySelector("#contact"));
-
-  navItemList.forEach((navItem) =>
-    navItem.addEventListener("click", () => {
-      setTimeout(() => {
-        navigation.style.opacity = 0;
-      }, 3000);
-    })
-  );
 
   /**********PROJECTS TOGGLE***********/
   function changeContentWithin() {

@@ -35,11 +35,20 @@
   //font-family: "noto-bold", sans-serif;
   margin-bottom: 1.3rem;
   font-size: 4rem;
+
+  @include for-small-desktop-down {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .slogan {
   margin-bottom: 5rem;
   font-size: 1.4rem;
+
+  @include for-small-desktop-down {
+    margin-bottom: 4rem;
+  }
 }
 
 %circle {
@@ -56,10 +65,22 @@
     font-size: 2.5rem;
     //font-family: "noto-bold", sans-serif;
     text-transform: uppercase;
+
+    @include for-small-desktop-down {
+      font-size: 2rem;
+    }
   }
   p {
     font-size: 1.3rem;
     text-transform: uppercase;
+
+    @include for-small-desktop-down {
+      font-size: 1.1rem;
+    }
+  }
+
+  @include for-tablet-landscape-down {
+    @include set-width-n-height(140px, 140px);
   }
 }
 
@@ -74,6 +95,10 @@
   height: 190px;
   h3 {
     font-size: 2.5rem;
+  }
+
+  @include for-tablet-landscape-down {
+    @include set-width-n-height(180px, 180px);
   }
 }
 .circle-list {

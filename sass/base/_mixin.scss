@@ -15,13 +15,13 @@
     @content;
   }
 }
-@mixin for-tablet-portrait-down {
-  @media (max-width: 600px) {
+@mixin for-tablet-landscape-down {
+  @media (max-width: 1000px) {
     @content;
   }
 }
-@mixin for-tablet-landscape-down {
-  @media (max-width: 900px) {
+@mixin for-small-desktop-down {
+  @media (max-width: 1300px) {
     @content;
   }
 }
