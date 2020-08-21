@@ -43,9 +43,9 @@
 }
 .timeline {
   position: absolute;
-  left: calc(-100% * 3 / 15);
+  //left: calc(- (500px - (100vw - 1000px) / 2));
   //transform: translateX(-50%);
-
+  right: calc((100vw - 1000px) / 2);
   opacity: 0;
 
   pointer-events: none;
