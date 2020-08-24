@@ -1,3 +1,4 @@
+/**********Preloading Effect*************/
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.querySelector(".loading-page").style.opacity = "0";
@@ -7,9 +8,10 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       document.querySelector(".main-page").style.opacity = "1";
     }, 500);
-  }, 2000);
+  }, 3000);
 });
 
+/**********DOM Functions*************/
 (function () {
   const deptBtnList = document.querySelectorAll(".btn-lg");
   const closeBtnList = document.querySelectorAll(".close-btn");
@@ -24,10 +26,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".menu-btn");
   const hamburger = document.querySelector(".menu-btn__burger");
 
+  /******* NAVIGATION ON SCROLL CHANGE ******/
   let showMenu = false;
-
-  /*NAVIGATION ON SCROLL CHANGE*/
-
+  let isNavHovered = false;
   menuBtn.addEventListener("click", toggleMenu);
 
   function toggleMenu() {
@@ -46,10 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  let isNavHovered = false;
-
   const isHover = (e) => e.parentElement.querySelector(":hover") === e;
-
   document.addEventListener("mousemove", function checkHover() {
     const hovered = isHover(navigation);
     if (hovered !== checkHover.hovered) {
@@ -69,28 +67,6 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }, 1000);
   };
-
-  navItemList.forEach((navItem) =>
-    navItem.addEventListener("click", () => {
-      setTimeout(() => {
-        navigation.style.opacity = 0;
-      }, 3000);
-    })
-  );
-
-  deptBtnList.forEach((deptBtn) => {
-    deptBtn.addEventListener("click", () => {
-      deptBtn.style.display = "none";
-      deptBtn.nextElementSibling.classList.add("slide-up");
-    });
-  });
-
-  closeBtnList.forEach((closeBtn) => {
-    closeBtn.addEventListener("click", () => {
-      closeBtn.parentElement.classList.remove("slide-up");
-      closeBtn.parentElement.previousElementSibling.style.display = "block";
-    });
-  });
 
   /********Nav item's color change on scroll*******/
 
@@ -129,7 +105,22 @@ window.addEventListener("DOMContentLoaded", () => {
   navItemObserver.observe(document.querySelector("#partnership"));
   navItemObserver.observe(document.querySelector("#contact"));
 
-  /**********PROJECTS TOGGLE***********/
+  /****** DEPARTMENT BUTTONS ******/
+  deptBtnList.forEach((deptBtn) => {
+    deptBtn.addEventListener("click", () => {
+      deptBtn.style.display = "none";
+      deptBtn.nextElementSibling.classList.add("slide-up");
+    });
+  });
+
+  closeBtnList.forEach((closeBtn) => {
+    closeBtn.addEventListener("click", () => {
+      closeBtn.parentElement.classList.remove("slide-up");
+      closeBtn.parentElement.previousElementSibling.style.display = "block";
+    });
+  });
+
+  /**********PROJECTS TOGGLER***********/
   function changeContentWithin() {
     let styleRedContent = carouselProjectsToggler.childNodes[1].textContent;
     let nonstyleRedContent = carouselProjectsToggler.childNodes[0].textContent;
@@ -231,6 +222,7 @@ window.addEventListener("DOMContentLoaded", () => {
     slideAutoRunning = setInterval(changeSlide, 5000);
   });
 
+  // Logo event listener.
   document.querySelector(".logo").addEventListener("click", () => {
     window.scrollTo(0, 720);
   });

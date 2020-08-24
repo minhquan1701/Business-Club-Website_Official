@@ -183,7 +183,6 @@
 }
 .carousel-projects-item {
   position: relative;
-  cursor: pointer;
 
   &::before {
     content: "";
@@ -204,8 +203,8 @@
     top: 310px;
     left: 0;
     background-color: $background-white;
-    height: 3px;
-    width: 100%;
+
+    @include set-width-n-height(100%, 3px);
   }
 
   &:hover {

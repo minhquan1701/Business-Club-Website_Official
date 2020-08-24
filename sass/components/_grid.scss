@@ -11,6 +11,10 @@
   font-weight: 700;
   font-size: 2.5rem;
   text-transform: uppercase;
+
+  @include for-tablet-landscape-down {
+    font-size: 2rem;
+  }
 }
 
 .grid-container {
@@ -19,7 +23,7 @@
 .dept-card {
   position: relative;
   margin-bottom: 3rem;
-  height: 700px;
+  height: 90vh;
 
   &::before {
     position: absolute;
@@ -30,7 +34,12 @@
     top: 0;
     left: 0;
   }
+
+  @include for-tablet-landscape-down {
+    height: 65vh;
+  }
 }
+
 .dept-card__content {
   @include set-width-n-height(393px, 391px);
   position: absolute;
@@ -43,15 +52,29 @@
   opacity: 0;
   transition: all 0.5s ease-in-out;
 
+  @include for-tablet-landscape-down {
+    @include set-width-n-height(290px, 288px);
+    top: 22%;
+    padding: 3rem 2rem;
+    font-size: 0.7rem;
+  }
   &::before {
     position: absolute;
     content: "";
     bottom: 0;
     left: 0;
     background-color: $primary-red;
-    height: 13px;
-    width: 100%;
+
+    @include set-width-n-height(100%, 13px);
+
+    @include for-tablet-landscape-down {
+      height: 9px;
+    }
   }
+}
+
+.dept-card:nth-of-type(2) .dept-card__content {
+  left: 30px;
 }
 
 .dept-card:nth-child(2) .dept-card__content__title span {
@@ -66,6 +89,10 @@
   margin-bottom: 2.5rem;
   color: $primary-red;
   font-weight: 500;
+
+  @include for-tablet-landscape-down {
+    margin-bottom: 1rem;
+  }
 }
 
 .dept-card__content__title span {
@@ -75,25 +102,43 @@
   font-weight: 700;
   font-size: 1.8rem;
 
+  @include for-tablet-landscape-down {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+
   &::before {
     position: absolute;
     background-color: $primary-red;
     content: "";
-    width: 60px;
-    height: 1px;
+    @include set-width-n-height(60px, 1px);
     top: -40px;
     left: 40%;
+
+    @include for-tablet-landscape-down {
+      width: 50px;
+      left: 37%;
+      top: -20px;
+    }
   }
 }
 
 .dept-card__content__des p {
   margin-bottom: 0.5rem;
   font-weight: bold;
-  font-family: "noto-bold", sans-serif;
+
+  @include for-tablet-landscape-down {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
 }
 
 .dept-card__content__des__list li {
   padding: 0.2rem 0;
+
+  @include for-tablet-landscape-down {
+    padding: 0.1rem 0;
+  }
 }
 
 .hr-card {
@@ -196,9 +241,17 @@
   &:focus {
     outline: none;
   }
+
+  @include for-tablet-landscape-down {
+    font-size: 0.7rem;
+  }
 }
 
 .btn-lg h3 {
   font-size: 1.5rem;
   margin-bottom: 0.4rem;
+
+  @include for-tablet-landscape-down {
+    font-size: 1rem;
+  }
 }
