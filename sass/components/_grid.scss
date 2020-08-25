@@ -12,6 +12,9 @@
   font-size: 2.5rem;
   text-transform: uppercase;
 
+  @include for-big-desktop-up {
+    font-size: 3rem;
+  }
   @include for-tablet-landscape-down {
     font-size: 2rem;
   }

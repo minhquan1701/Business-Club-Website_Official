@@ -38,14 +38,15 @@
   &:hover > .quote-sign {
     opacity: 1;
   }
+
+  @include for-big-desktop-up {
+    height: 1500px;
+    padding: 2.5rem 2rem 6rem 2.1rem;
+  }
+
   @include for-desktop-down {
     height: 600px;
     padding: 2.5rem 0.3rem 7rem 1.5rem;
-  }
-
-  @include for-big-desktop-up {
-    height: 700px;
-    padding: 2.5rem 2rem 6rem 2.1rem;
   }
 
   @include for-small-desktop-down {
@@ -125,7 +126,7 @@
 }
 
 .testimonial-btn--next {
-  right: 20px;
+  right: -35px;
 
   @include for-small-desktop-down {
     right: 25px;
@@ -133,7 +134,7 @@
 }
 
 .testimonial-btn--prev {
-  left: 10px;
+  left: -35px;
 
   @include for-small-desktop-down {
     left: 15px;

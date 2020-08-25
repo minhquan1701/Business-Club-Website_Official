@@ -199,7 +199,10 @@ window.addEventListener("DOMContentLoaded", () => {
     );
     currentShowedContainer.classList.remove("testimonial-container--show");
 
-    if (currentShowedContainer.nextElementSibling) {
+    if (
+      currentShowedContainer.nextElementSibling &&
+      currentShowedContainer.nextElementSibling.nodeName != "I"
+    ) {
       currentShowedContainer.nextElementSibling.classList.add(
         "testimonial-container--show"
       );
