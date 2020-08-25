@@ -42,13 +42,25 @@
   height: 100%;
 }
 .timeline {
+  $timeline-width: 0;
   position: absolute;
-  //left: calc(- (500px - (100vw - 1000px) / 2));
-  //transform: translateX(-50%);
-  right: calc((100vw - 1000px) / 2);
   opacity: 0;
-
   pointer-events: none;
+
+  @include for-big-desktop-up {
+    $timeline-width: 600px;
+    right: calc((100vw - #{$timeline-width * 2}) / 2);
+  }
+
+  @include for-desktop-down {
+    $timeline-width: 500px;
+    right: calc((100vw - #{$timeline-width * 2}) / 2);
+  }
+
+  @include for-tablet-landscape-down {
+    $timeline-width: 300px;
+    right: calc((100vw - #{$timeline-width * 2}) / 2);
+  }
 }
 %dot-template {
   content: "";
@@ -65,11 +77,11 @@
 }
 
 .timeline__item {
+  $timeline-width: 0;
+
   position: relative;
   display: inline-block;
   background-color: $background-white;
-
-  @include set-width-n-height(500px, 3px);
 
   &::after {
     @extend %dot-template;
@@ -96,6 +108,18 @@
     background-color: $dark-red;
     top: calc(100% + 25px);
     left: calc(100% - 5px);
+  }
+  @include for-big-desktop-up {
+    $timeline-width: 600px;
+    @include set-width-n-height(#{$timeline-width}, 3px);
+  }
+  @include for-desktop-down {
+    $timeline-width: 500px;
+    @include set-width-n-height(#{$timeline-width}, 3px);
+  }
+  @include for-tablet-landscape-down {
+    $timeline-width: 300px;
+    @include set-width-n-height(#{$timeline-width}, 3px);
   }
 }
 
@@ -125,7 +149,7 @@
   top: calc(100% + 30px);
   left: 100%;
   transform: translateX(-50%);
-  padding: 20px;
+  padding: 1rem 1.1rem;
   white-space: normal;
   transition: all 0.2s ease-in-out;
 
@@ -141,10 +165,19 @@
     width: 100%;
     height: 3px;
   }
+
+  @include for-tablet-landscape-down {
+    @include set-width-n-height(280px, 160px);
+  }
 }
 
 .timeline__item__content__des {
   line-height: 1.2;
+
+  @include for-tablet-landscape-down {
+    font-size: 0.9rem;
+    line-height: 1.1;
+  }
 }
 
 .timeline__item__content__btn {
@@ -152,6 +185,11 @@
 
   &:hover {
     @include set-bg-n-text-color($background-white);
+  }
+
+  @include for-tablet-landscape-down {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
   }
 }
 

@@ -1,11 +1,15 @@
 .testimonial {
   position: relative;
-  @include set-width-n-height(100%, 80vh);
+  @include set-width-n-height(100%, 90vh);
+
+  @include for-big-desktop-up {
+    height: 70vh;
+  }
 }
 .testimonial-wraper {
   position: relative;
-  margin: 4rem auto;
-  width: 90%;
+  margin: 0 auto;
+  @include set-width-n-height(90%, 100%);
 }
 .testimonial-container {
   position: absolute;
@@ -21,6 +25,10 @@
   place-items: center;
   pointer-events: none;
   transition: all 0.5s ease-in-out;
+
+  @include for-small-desktop-down {
+    grid-gap: 1.4rem;
+  }
 }
 .testimonial-card {
   border-radius: 20px;
@@ -39,6 +47,11 @@
     height: 700px;
     padding: 2.5rem 2rem 6rem 2.1rem;
   }
+
+  @include for-small-desktop-down {
+    height: 550px;
+    padding: 2.5rem 1rem 4rem 1.5rem;
+  }
 }
 .quote-sign {
   margin-top: -110px;
@@ -49,8 +62,6 @@
 }
 .testimonial-card__name-tag {
   display: flex;
-  //justify-content: center;
-  //justify-items: center;
   align-items: center;
   margin-bottom: 3rem;
 }
@@ -64,30 +75,40 @@
   border: 1px solid mix(white, $background-black, 60);
 }
 
-/* .testimonial-card__name-tag__ava > img {
-  object-fit: contain;
-
-  width: 100%;
-  height: 70px;
-} */
-
 .testimonial-card__name-tag__info {
   width: 75%;
   border-bottom: 1px solid mix(white, $background-black, 60);
-  padding: 0 0.1rem 1rem 0;
+
+  padding-bottom: 1rem;
+
+  @include for-small-desktop-down {
+    width: 65%;
+  }
 }
 
 .testimonial-card__name-tag__info__name {
   margin-bottom: 0.3rem;
+
+  @include for-small-desktop-down {
+    font-size: 0.8rem;
+  }
 }
 
 .testimonial-card__name-tag__info__title {
   font-style: italic;
   font-size: 0.8rem;
+
+  @include for-small-desktop-down {
+    font-size: 0.6rem;
+  }
 }
 .testimonial-card__quote {
   font-size: 1.2rem;
   line-height: 2;
+
+  @include for-small-desktop-down {
+    font-size: 0.9rem;
+  }
 }
 
 .testimonial-btn {
@@ -105,10 +126,18 @@
 
 .testimonial-btn--next {
   right: 20px;
+
+  @include for-small-desktop-down {
+    right: 25px;
+  }
 }
 
 .testimonial-btn--prev {
   left: 10px;
+
+  @include for-small-desktop-down {
+    left: 15px;
+  }
 }
 
 .testimonial-container--show {

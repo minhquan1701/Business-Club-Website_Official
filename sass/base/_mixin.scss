@@ -16,7 +16,7 @@
   }
 }
 @mixin for-tablet-landscape-down {
-  @media (max-width: 1000px) {
+  @media (max-width: 1100px) {
     @content;
   }
 }
@@ -26,12 +26,12 @@
   }
 }
 @mixin for-desktop-down {
-  @media (max-width: 1500px) {
+  @media (max-width: 1600px) {
     @content;
   }
 }
 @mixin for-big-desktop-up {
-  @media (min-width: 1500px) {
+  @media (min-width: 1700px) {
     @content;
   }
 }
