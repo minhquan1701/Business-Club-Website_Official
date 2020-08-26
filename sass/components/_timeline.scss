@@ -56,14 +56,14 @@
   }
 
   @include for-desktop-down {
-    $timeline-width: 500px;
+    $timeline-width: 34vw;
     right: calc((100vw - #{$timeline-width * 2}) / 2);
   }
 
-  @include for-tablet-landscape-down {
-    $timeline-width: 300px;
+  /* @include for-tablet-landscape-down {
+    $timeline-width: 320px;
     right: calc((100vw - #{$timeline-width * 2}) / 2);
-  }
+  } */
 }
 %dot-template {
   content: "";
@@ -117,13 +117,13 @@
     @include set-width-n-height(#{$timeline-width}, 3px);
   }
   @include for-desktop-down {
-    $timeline-width: 500px;
+    $timeline-width: 34vw;
     @include set-width-n-height(#{$timeline-width}, 3px);
   }
-  @include for-tablet-landscape-down {
-    $timeline-width: 300px;
+  /* @include for-tablet-landscape-down {
+    $timeline-width: 320px;
     @include set-width-n-height(#{$timeline-width}, 3px);
-  }
+  } */
 }
 
 .timeline__item__logo {
@@ -185,9 +185,15 @@
     padding: 1.7rem 2rem;
   }
 
-  @include for-tablet-landscape-down {
-    @include set-width-n-height(300px, 160px);
+  @include for-desktop-down {
+    $panel-width: calc(34vw * 5 / 6);
+
+    @include set-width-n-height(#{$panel-width}, #{$panel-width / 1.5});
   }
+
+  /* @include for-tablet-landscape-down {
+    @include set-width-n-height(300px, 160px);
+  } */
 }
 
 .timeline__item__content__des {
@@ -216,23 +222,26 @@
     padding: 0.6rem 1.1rem;
   }
 
+  @include for-small-desktop-down {
+    bottom: 20px;
+  }
+
   @include for-tablet-landscape-down {
-    font-size: 0.8rem;
-    bottom: 10px;
+    //font-size: 0.8rem;
+    bottom: 25px;
   }
 }
 
 .carousel-projects-container {
+  $img-width: calc((98vw - 6rem) / 5);
   opacity: 0;
   pointer-events: none;
   position: relative;
   display: grid;
   width: 98vw;
-  grid-template-columns: repeat(5, 230px);
-  grid-gap: 2.2rem;
-
+  grid-template-columns: repeat(5, #{$img-width});
+  grid-gap: 1rem;
   justify-content: center;
-
   white-space: initial;
 
   @include for-big-desktop-up {
