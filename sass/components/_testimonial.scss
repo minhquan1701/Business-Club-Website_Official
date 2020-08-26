@@ -1,15 +1,15 @@
 .testimonial {
   position: relative;
   @include set-width-n-height(100%, 90vh);
-
-  @include for-big-desktop-up {
-    height: 70vh;
-  }
 }
 .testimonial-wraper {
   position: relative;
   margin: 0 auto;
   @include set-width-n-height(90%, 100%);
+
+  @include for-big-desktop-up {
+    width: 1500px;
+  }
 }
 .testimonial-container {
   position: absolute;
@@ -129,7 +129,7 @@
   right: -35px;
 
   @include for-small-desktop-down {
-    right: 25px;
+    right: -35px;
   }
 }
 
@@ -137,7 +137,7 @@
   left: -35px;
 
   @include for-small-desktop-down {
-    left: 15px;
+    left: -35px;
   }
 }
 
