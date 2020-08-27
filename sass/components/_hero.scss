@@ -9,7 +9,7 @@
   &::before {
     content: "";
     @include set-width-n-height(100%, 100%);
-    background: url("../img/hero.jpg") center top/cover;
+    background: url("../img/hero.jpg") center center/cover;
     background-repeat: no-repeat;
     position: absolute;
     top: 0;

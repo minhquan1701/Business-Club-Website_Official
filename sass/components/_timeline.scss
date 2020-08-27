@@ -22,6 +22,10 @@
     background-color: rgba($color: #171717, $alpha: 0.8);
     @include set-width-n-height(100%, 100%);
   }
+
+  @include for-tablet-landscape-down {
+    height: 90vh;
+  }
 }
 
 .timeline-projects .title {
@@ -131,10 +135,10 @@
   bottom: -20px;
   left: 100%;
   transform: translateX(-50%);
-  max-width: 200px;
+  width: 200px;
 
   @include for-big-desktop-up {
-    width: 350px;
+    max-width: 350px;
     &:first-child {
       bottom: -50px;
     }
@@ -142,7 +146,7 @@
 }
 
 .timeline__item:nth-child(2) .timeline__item__logo {
-  max-width: 160px;
+  width: 160px;
   bottom: 15px;
 
   @include for-big-desktop-up {
@@ -262,7 +266,7 @@
 
   @include for-big-desktop-up {
     font-size: 1.5rem;
-    bottom: 20%;
+    bottom: 10%;
   }
 }
 .carousel-projects-item {
