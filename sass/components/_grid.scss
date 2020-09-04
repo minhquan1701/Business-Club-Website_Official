@@ -57,6 +57,10 @@
   opacity: 0;
   transition: all 0.5s ease-in-out;
 
+  @include for-extra-large-desktop-up {
+    @include set-width-n-height(600px, 700px);
+  }
+
   @include for-big-desktop-up {
     right: 100px;
   }
@@ -107,6 +111,9 @@
   color: $primary-red;
   font-weight: 500;
 
+  @include for-extra-large-desktop-up {
+    margin-bottom: 1.5rem;
+  }
   @include for-tablet-landscape-down {
     margin-bottom: 1rem;
   }
@@ -128,13 +135,12 @@
     position: absolute;
     background-color: $primary-red;
     content: "";
-    @include set-width-n-height(60px, 1px);
+    @include set-width-n-height(40%, 1px);
     top: -40px;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
 
     @include for-tablet-landscape-down {
-      width: 50px;
-      left: 37%;
       top: -20px;
     }
   }
@@ -171,6 +177,7 @@
     left: 0;
     will-change: transform;
     z-index: -1;
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
@@ -186,6 +193,7 @@
     left: 0;
     will-change: transform;
     z-index: -1;
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 .rd-card {
@@ -200,6 +208,7 @@
     left: 0;
     will-change: transform;
     z-index: -1;
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
@@ -237,6 +246,10 @@
   &:hover {
     color: $primary-red;
   }
+
+  @include for-extra-large-desktop-up {
+    border-width: 5px;
+  }
 }
 
 .btn-lg:hover::before,
@@ -259,6 +272,10 @@
     outline: none;
   }
 
+  @include for-extra-large-desktop-up {
+    font-size: 1.5rem;
+  }
+
   @include for-tablet-landscape-down {
     font-size: 0.7rem;
     margin-top: 0.7rem;
@@ -268,6 +285,11 @@
 .btn-lg h3 {
   font-size: 1.5rem;
   margin-bottom: 0.4rem;
+
+  @include for-extra-large-desktop-up {
+    font-size: 1.5rem;
+  }
+
   @include for-big-desktop-up {
     font-size: 2rem;
   }

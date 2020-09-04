@@ -1,9 +1,7 @@
 .carousel {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  width: 100vw;
-  height: 90vh;
-
+  @include set-width-n-height(100%, 90vh);
   @include for-big-desktop-up {
     height: 100vh;
   }

@@ -56,12 +56,12 @@
 
   @include for-big-desktop-up {
     $timeline-width: 600px;
-    right: calc((100vw - #{$timeline-width * 2}) / 2);
+    right: calc((100% - #{$timeline-width * 2}) / 2);
   }
 
   @include for-desktop-down {
     $timeline-width: 34vw;
-    right: calc((100vw - #{$timeline-width * 2}) / 2);
+    right: calc((100% - #{$timeline-width * 2}) / 2);
   }
 
   /* @include for-tablet-landscape-down {

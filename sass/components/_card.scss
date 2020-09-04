@@ -2,6 +2,10 @@
   position: relative;
   height: 45vh;
 
+  @include for-extra-large-desktop-up {
+    height: 40vh;
+  }
+
   @include for-tablet-landscape-down {
     height: 35vh;
   }
@@ -16,7 +20,9 @@
   padding: 0.4rem 1rem;
   border: none;
   box-shadow: 0 9px 36px rgba(0, 0, 0, 0.24);
-
+  @include for-extra-large-desktop-up {
+    @include set-width-n-height(450px, 550px);
+  }
   @include for-tablet-landscape-down {
     @include set-width-n-height(240px, 310px);
   }
@@ -76,9 +82,12 @@
 .card__des {
   font-size: 0.8rem;
   text-align: center;
-  //word-spacing: -1px;
+
   line-height: 1.2;
-  //text-justify: distribute;
+
+  @include for-extra-large-desktop-up {
+    font-size: 1rem;
+  }
 
   @include for-tablet-landscape-down {
     font-size: 0.7rem;

@@ -3,7 +3,10 @@
   margin: 0 0 1rem 3rem;
   cursor: pointer;
   width: 190px;
-
+  @include for-extra-large-desktop-up {
+    width: 240px;
+    margin: 0 0 0 5rem;
+  }
   @include for-small-desktop-down {
     width: 160px;
   }
@@ -178,6 +181,11 @@
       margin-right: 1rem;
       padding: 1.3rem 0.3rem;
     }
+  }
+
+  @include for-extra-large-desktop-up {
+    max-width: 2000px;
+    height: 150px;
   }
 }
 

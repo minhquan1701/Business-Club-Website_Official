@@ -40,3 +40,9 @@
     @content;
   }
 }
+
+@mixin for-extra-large-desktop-up {
+  @media (min-width: 1900px) {
+    @content;
+  }
+}

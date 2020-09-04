@@ -76,6 +76,10 @@
     }
   }
 
+  @include for-extra-large-desktop-up {
+    @include set-width-n-height(200px, 200px);
+  }
+
   @include for-tablet-landscape-down {
     @include set-width-n-height(120px, 120px);
   }
@@ -94,6 +98,9 @@
     font-size: 2.5rem;
   }
 
+  @include for-extra-large-desktop-up {
+    @include set-width-n-height(300px, 300px);
+  }
   @include for-tablet-landscape-down {
     @include set-width-n-height(175px, 175px);
   }

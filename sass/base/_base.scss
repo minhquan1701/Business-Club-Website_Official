@@ -10,15 +10,23 @@
 html,
 body {
   scroll-behavior: smooth;
+  font-size: 1rem;
+
+  @include for-extra-large-desktop-up {
+    font-size: 1.4rem;
+  }
 }
 body {
   width: 100vw;
   height: 100vh;
   font-family: "Noto Sans", sans-serif;
-  font-size: 1rem;
   line-height: 1.1;
   letter-spacing: 1px;
   overflow-x: hidden;
+}
+
+.main-page {
+  max-width: 2000px;
 }
 
 a {
@@ -55,6 +63,10 @@ span {
   text-align: center;
   border: 1px solid;
   border-radius: 102px;
+
+  @include for-extra-large-desktop-up {
+    border-width: 2px;
+  }
 }
 img {
   width: 100%;
