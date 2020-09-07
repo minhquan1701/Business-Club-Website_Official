@@ -42,7 +42,7 @@
 }
 
 @mixin for-extra-large-desktop-up {
-  @media (min-width: 1900px) {
+  @media (min-width: 2100px) {
     @content;
   }
 }

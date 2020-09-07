@@ -55,7 +55,7 @@
   pointer-events: none;
 
   @include for-big-desktop-up {
-    $timeline-width: 600px;
+    $timeline-width: 30vw;
     right: calc((100% - #{$timeline-width * 2}) / 2);
   }
 
@@ -116,8 +116,9 @@
     top: calc(100% + 25px);
     left: calc(100% - 5px);
   }
+
   @include for-big-desktop-up {
-    $timeline-width: 600px;
+    $timeline-width: 30vw;
     @include set-width-n-height(#{$timeline-width}, 3px);
   }
   @include for-desktop-down {
@@ -143,6 +144,10 @@
       bottom: -50px;
     }
   }
+
+  @include for-extra-large-desktop-up {
+    width: 400px;
+  }
 }
 
 .timeline__item:nth-child(2) .timeline__item__logo {
@@ -151,6 +156,10 @@
 
   @include for-big-desktop-up {
     width: 240px;
+  }
+
+  @include for-extra-large-desktop-up {
+    width: 300px;
   }
 }
 
@@ -172,7 +181,6 @@
   transition: all 0.2s ease-in-out;
 
   @include set-bg-n-text-color(rgba($color: $dark-red, $alpha: 0.34));
-  @include set-width-n-height(380px, 200px);
 
   &::before {
     content: "";
@@ -184,20 +192,26 @@
     height: 3px;
   }
 
+  $panel-width: calc(34vw * 5 / 6);
+
+  @include set-width-n-height(#{$panel-width}, 200px);
+
   @include for-big-desktop-up {
-    @include set-width-n-height(500px, 250px);
-    padding: 1.7rem 2rem;
+    height: 300px;
+    padding: 2rem 1.4rem;
+  }
+
+  @include for-extra-large-desktop-up {
+    $panel-width: calc(30vw * 5 / 6);
+    @include set-width-n-height(#{$panel-width}, 400px);
   }
 
   @include for-desktop-down {
-    $panel-width: calc(34vw * 5 / 6);
-
-    @include set-width-n-height(#{$panel-width}, #{$panel-width / 1.5});
   }
 
-  /* @include for-tablet-landscape-down {
-    @include set-width-n-height(300px, 160px);
-  } */
+  @include for-tablet-landscape-down {
+    height: 180px;
+  }
 }
 
 .timeline__item__content__des {
@@ -226,6 +240,10 @@
     padding: 0.6rem 1.1rem;
   }
 
+  @include for-extra-large-desktop-up {
+    border-width: 4px;
+  }
+
   @include for-small-desktop-down {
     bottom: 20px;
   }
@@ -237,19 +255,24 @@
 }
 
 .carousel-projects-container {
-  $img-width: calc((98vw - 6rem) / 5);
+  //@error: calc((98vw - 6rem) / 5);
   opacity: 0;
   pointer-events: none;
   position: relative;
   display: grid;
   width: 98vw;
-  grid-template-columns: repeat(5, #{$img-width});
+  grid-template-columns: repeat(5, 18%);
   grid-gap: 1rem;
   justify-content: center;
   white-space: initial;
 
-  @include for-big-desktop-up {
+  /*  @include for-big-desktop-up {
     grid-template-columns: repeat(5, 300px);
+  } */
+
+  @include for-big-desktop-up {
+    width: 100%;
+    grid-gap: 1.5rem;
   }
 }
 .carousel-projects-toggler {
@@ -258,7 +281,7 @@
   margin-right: 1.3rem;
   cursor: pointer;
   transition: color 0.2s ease-in-out;
-  bottom: 15%;
+  bottom: 10%;
   right: 2%;
   &:hover {
     color: $primary-red;
@@ -266,7 +289,6 @@
 
   @include for-big-desktop-up {
     font-size: 1.5rem;
-    bottom: 10%;
   }
 }
 .carousel-projects-item {
@@ -299,7 +321,15 @@
     @include set-width-n-height(100%, 3px);
 
     @include for-big-desktop-up {
-      top: 450px;
+      top: 400px;
+    }
+
+    @include for-extra-large-desktop-up {
+      top: 500px;
+    }
+
+    @include for-tablet-landscape-down {
+      top: 250px;
     }
   }
 
@@ -310,7 +340,15 @@
       opacity: 0.8;
 
       @include for-big-desktop-up {
-        height: 450px;
+        height: 400px;
+      }
+
+      @include for-extra-large-desktop-up {
+        height: 500px;
+      }
+
+      @include for-tablet-landscape-down {
+        height: 250px;
       }
     }
 
@@ -337,11 +375,15 @@
     padding: 1.5rem 1.7rem;
     font-size: 1.1rem;
   }
+
+  @include for-tablet-landscape-down {
+    font-size: 0.8rem;
+  }
 }
 
 .carousel-projects-item__btn {
   position: relative;
-  //@include set-width-n-height(100%, 50px);
+
   width: 100%;
 
   margin-top: 1rem;
@@ -356,6 +398,14 @@
     margin-top: 2rem;
     padding: 1.2rem;
   }
+
+  @include for-extra-large-desktop-up {
+    border-width: 4px;
+  }
+
+  @include for-tablet-landscape-down {
+    padding: 0.7rem 0.4rem;
+  }
 }
 
 .carousel-projects-item__btn h5 {
@@ -364,12 +414,20 @@
   @include for-big-desktop-up {
     font-size: 1rem;
   }
+
+  @include for-tablet-landscape-down {
+    font-size: 0.7rem;
+  }
 }
 .carousel-projects-item__btn p {
   font-size: 0.7rem;
 
   @include for-big-desktop-up {
     font-size: 0.8rem;
+  }
+
+  @include for-tablet-landscape-down {
+    font-size: 0.5rem;
   }
 }
 
@@ -379,7 +437,14 @@
   position: relative;
 
   @include for-big-desktop-up {
-    @include set-width-n-height(100%, 450px);
+    @include set-width-n-height(100%, 400px);
+  }
+  @include for-extra-large-desktop-up {
+    height: 500px;
+  }
+
+  @include for-tablet-landscape-down {
+    height: 250px;
   }
 }
 
