@@ -13,14 +13,14 @@ body {
   font-size: 1rem;
 
   @include for-extra-large-desktop-up {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 body {
   width: 100vw;
   height: 100vh;
   font-family: "Noto Sans", sans-serif;
-  line-height: 1.1;
+  line-height: 1.4;
   letter-spacing: 1px;
   overflow-x: hidden;
 }

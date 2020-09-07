@@ -112,7 +112,7 @@
   font-weight: 500;
 
   @include for-extra-large-desktop-up {
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0 3rem 0;
   }
   @include for-tablet-landscape-down {
     margin-bottom: 1rem;
@@ -150,6 +150,10 @@
   margin-bottom: 0.5rem;
   font-weight: bold;
 
+  @include for-extra-large-desktop-up {
+    margin-bottom: 1.3rem;
+  }
+
   @include for-tablet-landscape-down {
     font-size: 0.8rem;
     margin-bottom: 0.3rem;
@@ -158,6 +162,10 @@
 
 .dept-card__content__des__list li {
   padding: 0.2rem 0;
+
+  @include for-extra-large-desktop-up {
+    padding: 0.3rem 0;
+  }
 
   @include for-tablet-landscape-down {
     padding: 0.1rem 0;
@@ -186,7 +194,7 @@
   &::after {
     content: "";
     @include set-width-n-height(100%, 100%);
-    background: url("../img/our-department/mkt.jpeg") no-repeat center
+    background: url("../img/our-department/mkt-test.png") no-repeat center
       center/cover;
     position: absolute;
     top: 0;

@@ -22,6 +22,7 @@
   box-shadow: 0 9px 36px rgba(0, 0, 0, 0.24);
   @include for-extra-large-desktop-up {
     @include set-width-n-height(450px, 550px);
+    padding: 1rem 2rem;
   }
   @include for-tablet-landscape-down {
     @include set-width-n-height(240px, 310px);
