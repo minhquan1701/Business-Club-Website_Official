@@ -139,7 +139,7 @@
   width: 200px;
 
   @include for-big-desktop-up {
-    width: 350px;
+    width: 280px;
     &:first-child {
       bottom: -50px;
     }
@@ -155,7 +155,7 @@
   bottom: 15px;
 
   @include for-big-desktop-up {
-    width: 240px;
+    width: 180px;
   }
 
   @include for-extra-large-desktop-up {
@@ -321,7 +321,7 @@
     @include set-width-n-height(100%, 3px);
 
     @include for-big-desktop-up {
-      top: 400px;
+      top: 450px;
     }
 
     @include for-extra-large-desktop-up {
@@ -441,7 +441,7 @@
   position: relative;
 
   @include for-big-desktop-up {
-    @include set-width-n-height(100%, 400px);
+    @include set-width-n-height(100%, 450px);
   }
   @include for-extra-large-desktop-up {
     height: 600px;
