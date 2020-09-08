@@ -23,6 +23,10 @@
     @include set-width-n-height(100%, 100%);
   }
 
+  @include for-extra-large-desktop-up {
+    max-width: 2500px;
+    margin: 0 auto;
+  }
   @include for-tablet-landscape-down {
     height: 90vh;
   }
@@ -308,6 +312,13 @@
 
     @include for-big-desktop-up {
       top: 450px;
+    }
+    @include for-extra-large-desktop-up {
+      top: 600px;
+    }
+
+    @include for-tablet-landscape-down {
+      top: 250px;
     }
   }
 

@@ -5,6 +5,10 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
+
+  @include for-extra-large-desktop-up {
+    padding: 3rem 1rem;
+  }
 }
 .footer-logo {
   display: flex;

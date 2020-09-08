@@ -1,6 +1,11 @@
 .testimonial {
   position: relative;
   @include set-width-n-height(100%, 90vh);
+
+  @include for-extra-large-desktop-up {
+    max-width: 2300px;
+    margin: 0 auto;
+  }
 }
 .testimonial-wraper {
   position: relative;
@@ -43,15 +48,15 @@
     opacity: 1;
   }
 
+  @include for-big-desktop-up {
+    height: 700px;
+    padding: 2.5rem 2rem 6rem 2.1rem;
+  }
+
   @include for-extra-large-desktop-up {
     height: 800px;
     padding: 3.5rem 1.4rem 4rem 2.6rem;
     border-radius: 35px;
-  }
-
-  @include for-big-desktop-up {
-    height: 700px;
-    padding: 2.5rem 2rem 6rem 2.1rem;
   }
 
   @include for-desktop-down {
@@ -70,6 +75,11 @@
   transform: rotate(179deg);
   width: 140px;
   opacity: 0.7;
+
+  @include for-extra-large-desktop-up {
+    width: 171px;
+    margin-top: -145px;
+  }
 }
 .testimonial-card__name-tag {
   display: flex;

@@ -5,6 +5,11 @@
   @include for-big-desktop-up {
     height: 100vh;
   }
+
+  @include for-extra-large-desktop-up {
+    max-width: 2500px;
+    margin: 0 auto;
+  }
 }
 .navigator-container {
   display: flex;
@@ -86,6 +91,10 @@
   @include for-tablet-landscape-down {
     width: 120px;
   }
+
+  @include for-extra-large-desktop-up {
+    width: 195px;
+  }
 }
 
 @for $i from 1 through 13 {
@@ -110,11 +119,19 @@ img[src="img/media-logo/dien-quan-network.png"] {
   @include for-tablet-landscape-down {
     width: 100px !important;
   }
+
+  @include for-extra-large-desktop-up {
+    width: 131px !important;
+  }
 }
 
 img[src="img/media-logo/Isao-vn.png"] {
   @include for-tablet-landscape-down {
     width: 110px !important;
+  }
+
+  @include for-extra-large-desktop-up {
+    width: 140px !important;
   }
 }
 
@@ -122,20 +139,48 @@ img[src="img/coporate-logo/Kuehne-Nagel.png"] {
   @include for-tablet-landscape-down {
     width: 160px !important;
   }
+
+  @include for-extra-large-desktop-up {
+    width: 240px !important;
+  }
 }
 img[src="img/coporate-logo/Mercedes-Benz.png"] {
   @include for-tablet-landscape-down {
     width: 120px !important;
+  }
+
+  @include for-extra-large-desktop-up {
+    width: 170px !important;
   }
 }
 img[src="img/strategic-logo/DMS-Academy.png"] {
   @include for-tablet-landscape-down {
     width: 100px !important;
   }
+
+  @include for-extra-large-desktop-up {
+    width: 133px !important;
+  }
 }
 img[src="img/strategic-logo/Redder-x-Dentsu-Logo.png"] {
   @include for-tablet-landscape-down {
     width: 110px !important;
+  }
+
+  @include for-extra-large-desktop-up {
+    width: 160px !important;
+  }
+}
+
+img[src="img/strategic-logo/Aim-Academy.png"] {
+  @include for-extra-large-desktop-up {
+    width: 340px !important;
+  }
+}
+
+img[src="img/coporate-logo/Laiday.png"] {
+  @include for-extra-large-desktop-up {
+    width: 230px !important;
   }
 }
 

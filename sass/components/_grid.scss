@@ -1,6 +1,8 @@
 .grid-layout {
   position: relative;
   padding-top: 7%;
+  max-width: 2400px;
+  margin: 0 auto;
 }
 .title {
   position: absolute;
@@ -58,7 +60,8 @@
   transition: all 0.5s ease-in-out;
 
   @include for-extra-large-desktop-up {
-    @include set-width-n-height(600px, 700px);
+    @include set-width-n-height(600px, 650px);
+    top: 25%;
   }
 
   @include for-big-desktop-up {
@@ -244,11 +247,19 @@
     top: -3px;
     left: -3px;
     border-width: 3px 0 0 3px;
+
+    @include for-extra-large-desktop-up {
+      border-width: 0 5px 5px 0;
+    }
   }
   &::after {
     right: -3px;
     bottom: -3px;
     border-width: 0 3px 3px 0;
+
+    @include for-extra-large-desktop-up {
+      border-width: 0 5px 5px 0;
+    }
   }
 
   &:hover {
