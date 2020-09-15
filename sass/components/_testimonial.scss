@@ -87,17 +87,25 @@
   margin-bottom: 3rem;
 }
 .testimonial-card__name-tag__ava {
-  display: inline-block;
+  //display: inline-block;
   margin-right: 1rem;
-  background: url("../img/quan.JPG") no-repeat center center/cover;
+  //background: url("../img/quan.JPG") no-repeat center center/cover;
 
   @include set-width-n-height(70px, 70px);
+  overflow: hidden;
   border-radius: 50%;
   border: 1px solid mix(white, $background-black, 60);
 
   @include for-extra-large-desktop-up {
     @include set-width-n-height(80px, 80px);
   }
+}
+
+.testimonial-ava {
+  height: unset;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
 .testimonial-card__name-tag__info {

@@ -18,6 +18,7 @@
 
 @mixin for-tablet-potrait-down {
   @media (max-width: 850px) {
+    @content;
   }
 }
 @mixin for-tablet-landscape-down {

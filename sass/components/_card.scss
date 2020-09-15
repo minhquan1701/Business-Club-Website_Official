@@ -27,6 +27,11 @@
   @include for-tablet-landscape-down {
     @include set-width-n-height(240px, 310px);
   }
+
+  @include for-tablet-potrait-down {
+    @include set-width-n-height(200px, 270px);
+    padding: 1rem;
+  }
 }
 
 .card--right,
@@ -92,6 +97,10 @@
 
   @include for-tablet-landscape-down {
     font-size: 0.7rem;
+  }
+
+  @include for-tablet-potrait-down {
+    font-size: 0.9rem;
   }
 }
 .card__des span {

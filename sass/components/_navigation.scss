@@ -15,6 +15,10 @@
   @include for-small-desktop-down {
     width: 160px;
   }
+
+  @include for-tablet-potrait-down {
+    width: 125px;
+  }
 }
 
 .nav-link {
@@ -25,6 +29,9 @@
 
   @include for-small-desktop-down {
     font-size: 1rem;
+  }
+  @include for-tablet-potrait-down {
+    font-size: 2rem;
   }
 }
 
@@ -87,6 +94,10 @@
   @include for-tablet-landscape-down {
     visibility: visible;
   }
+
+  @include for-tablet-potrait-down {
+    top: 3.3rem;
+  }
 }
 
 .nav-top {
@@ -122,6 +133,10 @@
 
         &.open {
           transform: translateX(0);
+        }
+
+        @include for-tablet-potrait-down {
+          padding: 1rem;
         }
       }
     }

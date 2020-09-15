@@ -5,7 +5,7 @@
   &::after {
     content: "";
     @include set-width-n-height(100%, 100%);
-    background: url("../img/background-project.jpeg") no-repeat center
+    background: url("../img/background-project.png") no-repeat center
       center/cover;
     position: absolute;
     top: 0;
@@ -269,10 +269,6 @@
   grid-gap: 1rem;
   justify-content: center;
   white-space: initial;
-
-  /*  @include for-big-desktop-up {
-    grid-template-columns: repeat(5, 300px);
-  } */
 
   @include for-big-desktop-up {
     width: 100%;

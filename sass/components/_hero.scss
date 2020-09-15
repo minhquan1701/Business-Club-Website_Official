@@ -83,6 +83,10 @@
   @include for-tablet-landscape-down {
     @include set-width-n-height(120px, 120px);
   }
+
+  @include for-tablet-potrait-down {
+    @include set-width-n-height(100px, 100px);
+  }
 }
 
 .circle-one,
@@ -103,6 +107,10 @@
   }
   @include for-tablet-landscape-down {
     @include set-width-n-height(175px, 175px);
+  }
+
+  @include for-tablet-potrait-down {
+    @include set-width-n-height(150px, 150px);
   }
 }
 .circle-list {

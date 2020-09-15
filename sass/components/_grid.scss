@@ -197,8 +197,8 @@
   &::after {
     content: "";
     @include set-width-n-height(100%, 100%);
-    background: url("../img/our-department/mkt-test.png") no-repeat center
-      center/cover;
+    background: url("../img/our-department/mkt-dept-desktop-w.png") no-repeat
+      center center/cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -249,7 +249,11 @@
     border-width: 3px 0 0 3px;
 
     @include for-extra-large-desktop-up {
-      border-width: 0 5px 5px 0;
+      border-width: 5px 0 0 5px;
+    }
+
+    @include for-tablet-potrait-down {
+      border-width: 2px 0 0 2px;
     }
   }
   &::after {
@@ -260,6 +264,10 @@
     @include for-extra-large-desktop-up {
       border-width: 0 5px 5px 0;
     }
+
+    @include for-tablet-potrait-down {
+      border-width: 0 2px 2px 0;
+    }
   }
 
   &:hover {
@@ -268,6 +276,10 @@
 
   @include for-extra-large-desktop-up {
     border-width: 5px;
+  }
+
+  @include for-tablet-potrait-down {
+    border-width: 2px;
   }
 }
 
