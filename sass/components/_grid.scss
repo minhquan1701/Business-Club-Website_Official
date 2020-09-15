@@ -74,6 +74,10 @@
     padding: 3rem 2rem;
     font-size: 0.7rem;
   }
+
+  @include for-tablet-potrait-down {
+    @include set-width-n-height(235px, 245px);
+  }
   &::before {
     position: absolute;
     content: "";
