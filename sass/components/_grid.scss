@@ -257,6 +257,8 @@
     }
 
     @include for-tablet-potrait-down {
+      top: -2px;
+      left: -2px;
       border-width: 2px 0 0 2px;
     }
   }
@@ -270,6 +272,8 @@
     }
 
     @include for-tablet-potrait-down {
+      right: -2px;
+      bottom: -2px;
       border-width: 0 2px 2px 0;
     }
   }

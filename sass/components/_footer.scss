@@ -9,14 +9,24 @@ footer {
   @include for-extra-large-desktop-up {
     padding: 3rem 1rem;
   }
+  @include for-tablet-potrait-down {
+    font-size: 1rem;
+  }
 }
 .footer-logo {
   display: flex;
   align-items: center;
+  @include for-tablet-potrait-down {
+    flex-wrap: wrap;
+  }
 }
 
 .footer-logo p {
   margin: 0 0 0.9rem 0.5rem;
+
+  @include for-tablet-potrait-down {
+    margin: 0 0 0 3rem;
+  }
 }
 .footer-item {
   padding: 0.4rem 0;
@@ -34,10 +44,19 @@ footer {
   }
 }
 .footer-icons {
+  display: flex;
   margin-right: 3rem;
+  @include for-tablet-potrait-down {
+    margin-right: 2rem;
+  }
 }
 .facebook-logo,
 .ins-logo {
   margin-right: 0.5rem;
   width: 50px;
+
+  @include for-tablet-potrait-down {
+    width: 30px;
+    margin-right: 1rem;
+  }
 }

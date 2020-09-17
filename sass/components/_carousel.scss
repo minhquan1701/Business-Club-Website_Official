@@ -10,16 +10,26 @@
     max-width: 2500px;
     margin: 0 auto;
   }
+
+  @include for-tablet-potrait-down {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 15% 85%;
+  }
 }
 .navigator-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   background-color: $background-black;
 }
 
 .navigator-content {
   text-align: right;
+  @include for-tablet-potrait-down {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
 }
 
 .navigator__item {
@@ -38,6 +48,16 @@
   @include for-small-desktop-down {
     font-size: 1rem;
   }
+
+  @include for-tablet-potrait-down {
+    padding: 1.4rem 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+
+    i {
+      transform: rotate(90deg);
+    }
+  }
 }
 
 .navigator__item--active {
@@ -53,6 +73,11 @@
   }
   @include for-small-desktop-down {
     font-size: 1.5rem;
+  }
+
+  @include for-tablet-potrait-down {
+    font-size: 1.7rem;
+    border-bottom: 4px solid $primary-red;
   }
 }
 
