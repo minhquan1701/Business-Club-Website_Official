@@ -27,9 +27,6 @@
     max-width: 2500px;
     margin: 0 auto;
   }
-  @include for-tablet-landscape-down {
-    height: 90vh;
-  }
 
   @include for-tablet-potrait-down {
     font-size: 1rem;
@@ -289,20 +286,24 @@
 }
 
 .carousel-projects-container {
-  //@error: calc((98vw - 6rem) / 5);
   opacity: 0;
   pointer-events: none;
   position: relative;
   display: grid;
-  width: 98vw;
-  grid-template-columns: repeat(5, 18%);
+  width: 95vw;
+  //grid-template-columns: repeat(5, 18%);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-gap: 1rem;
   justify-content: center;
   white-space: initial;
 
-  @include for-big-desktop-up {
+  /* @include for-big-desktop-up {
     width: 100%;
     grid-gap: 1.5rem;
+  } */
+
+  @include for-small-desktop-down {
+    width: 80%;
   }
 }
 .carousel-projects-toggler {
