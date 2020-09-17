@@ -277,9 +277,10 @@
       border-width: 0 2px 2px 0;
     }
   }
-
-  &:hover {
-    color: $primary-red;
+  @media (min-width: 1101px) {
+    &:hover {
+      color: $primary-red;
+    }
   }
 
   @include for-extra-large-desktop-up {
@@ -291,11 +292,13 @@
   }
 }
 
-.btn-lg:hover::before,
-.btn-lg:hover::after {
-  width: calc(100% + 3px);
-  height: 100%;
-  border-color: $primary-red;
+@media (min-width: 1101px) {
+  .btn-lg:hover::before,
+  .btn-lg:hover::after {
+    width: calc(100% + 3px);
+    height: 100%;
+    border-color: $primary-red;
+  }
 }
 
 .close-btn {

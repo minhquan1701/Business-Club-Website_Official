@@ -19,8 +19,12 @@
 .navigator-container {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   background-color: $background-black;
+
+  @include for-tablet-potrait-down {
+    align-items: flex-end;
+  }
 }
 
 .navigator-content {
@@ -50,7 +54,7 @@
   }
 
   @include for-tablet-potrait-down {
-    padding: 1.4rem 2rem;
+    padding: 1.4rem 2.2rem;
     font-size: 1.1rem;
     margin-bottom: 0;
 

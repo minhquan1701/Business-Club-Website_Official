@@ -124,14 +124,15 @@
     cursor: pointer;
   }
 
-  &:hover::after {
-    background-color: $primary-red;
-  }
-
-  &:hover &__content {
-    background-color: $dark-red;
-    top: calc(100% + 25px);
-    left: calc(100% - 5px);
+  @media (min-width: 1101px) {
+    &:hover::after {
+      background-color: $primary-red;
+    }
+    &:hover &__content {
+      background-color: $dark-red;
+      top: calc(100% + 25px);
+      left: calc(100% - 5px);
+    }
   }
 
   @include for-big-desktop-up {
