@@ -26,6 +26,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".menu-btn");
   const hamburger = document.querySelector(".menu-btn__burger");
 
+  const tabletPotraitDown = window.matchMedia("(max-width:850px)");
+
   /******* NAVIGATION ON SCROLL CHANGE ******/
   let showMenu = false;
   let isNavHovered = false;

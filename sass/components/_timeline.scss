@@ -332,7 +332,19 @@
   @include for-big-desktop-up {
     font-size: 1.5rem;
   }
+
+  @include for-tablet-potrait-down {
+    bottom: 2%;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 1.4rem;
+
+    i {
+      transform: rotate(90deg);
+    }
+  }
 }
+
 .carousel-projects-item {
   position: relative;
 

@@ -1,5 +1,6 @@
 .testimonial {
   position: relative;
+  overflow: hidden;
   @include set-width-n-height(100%, 90vh);
 
   @include for-extra-large-desktop-up {
@@ -8,7 +9,7 @@
   }
 
   @include for-tablet-potrait-down {
-    height: 265vh;
+    height: 200vh;
     background-color: $white-smoke;
   }
 }
