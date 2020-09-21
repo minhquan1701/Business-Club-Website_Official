@@ -75,7 +75,7 @@
 
   @include for-tablet-potrait-down {
     left: -40%;
-    top: calc(100% - 45vh / 2);
+    top: 27%;
     transform: rotate(90deg);
   }
 }
@@ -171,6 +171,9 @@
 
   @include for-tablet-potrait-down {
     width: 155px;
+    transform: rotate(-90deg);
+    bottom: 15px;
+    left: 75%;
   }
 }
 
@@ -188,11 +191,16 @@
 
   @include for-tablet-potrait-down {
     width: 118px;
+    bottom: 30px;
   }
 }
 
 .timeline__item:nth-child(3) .timeline__item__logo {
   bottom: 45px;
+
+  @include for-tablet-potrait-down {
+    bottom: 70px;
+  }
 }
 
 .timeline__item:first-child {
@@ -219,9 +227,9 @@
     width: 100%;
     height: 3px;
 
-    @include for-tablet-potrait-down {
+    /* @include for-tablet-potrait-down {
       height: 2px;
-    }
+    } */
   }
 
   $panel-width: calc(34vw * 5 / 6);
@@ -246,8 +254,13 @@
   }
 
   @include for-tablet-potrait-down {
+    $panel-width: 45vw;
     transform: rotate(-90deg);
-    top: -250px;
+    width: #{$panel-width};
+    top: calc(7vw - #{$panel-width});
+    left: 85%;
+    padding: 2rem 1.4rem;
+    background-color: $dark-red;
   }
 }
 
@@ -264,7 +277,7 @@
   }
 
   @include for-tablet-potrait-down {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -295,7 +308,11 @@
   }
 
   @include for-tablet-potrait-down {
-    padding: 0.6rem 1.2rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+    color: $text-black;
+    background-color: $background-white;
   }
 }
 
