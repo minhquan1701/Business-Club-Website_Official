@@ -231,4 +231,22 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".logo").addEventListener("click", () => {
     window.scrollTo(0, 720);
   });
+
+  //Functions on phone display only.
+  const mediaQuery = window.matchMedia("(max-width: 599px)");
+
+  const listCards = document.querySelectorAll(".card");
+  const cardsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+        }
+      });
+    },
+    {
+      threshold: 0.7,
+    }
+  );
+  listCards.forEach((card) => cardsObserver.observe(card));
 })();
