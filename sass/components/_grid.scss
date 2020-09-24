@@ -34,7 +34,7 @@
 .grid-container {
   padding: 0 2rem;
   @include for-phone {
-    padding: 0;
+    padding: 2rem;
   }
 }
 .dept-card {
@@ -56,6 +56,11 @@
   }
   @include for-tablet-landscape-down {
     height: 65vh;
+  }
+  @include for-phone {
+    position: sticky;
+    top: 20px;
+    transform-origin: center top;
   }
 }
 
@@ -192,8 +197,6 @@
 }
 
 .hr-card {
-  position: relative;
-
   &::after {
     content: "";
     @include set-width-n-height(100%, 100%);
@@ -209,7 +212,6 @@
 }
 
 .mkt-card {
-  position: relative;
   &::after {
     content: "";
     @include set-width-n-height(100%, 100%);
@@ -224,7 +226,6 @@
   }
 }
 .rd-card {
-  position: relative;
   &::after {
     content: "";
     @include set-width-n-height(100%, 100%);
