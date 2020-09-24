@@ -253,6 +253,19 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       );
       listCards.forEach((card) => cardsObserver.observe(card));
+
+      deptBtnList.forEach((deptBtn) => {
+        deptBtn.addEventListener("click", () => {
+          deptBtn.style.display = "none";
+          deptBtn.nextElementSibling.classList.add("slide-up");
+
+          let offset = window.scrollY;
+          document.querySelectorAll(".dept-card").forEach((deptCard) => {
+            deptCard.classList.add("dept-card--on-phone-clicked");
+            deptCard.style.top = `- ${offset}`;
+          });
+        });
+      });
     }
   }
 
