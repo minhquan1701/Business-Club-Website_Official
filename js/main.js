@@ -259,11 +259,11 @@ window.addEventListener("DOMContentLoaded", () => {
           deptBtn.style.display = "none";
           deptBtn.nextElementSibling.classList.add("slide-up");
 
-          let offset = window.scrollY;
-          document.querySelectorAll(".dept-card").forEach((deptCard) => {
-            deptCard.classList.add("dept-card--on-phone-clicked");
-            deptCard.style.top = `- ${offset}`;
-          });
+          deptBtn.parentElement.classList.add("dept-card--on-phone-clicked");
+          let offsetTop = -deptBtn.parentElement.getBoundingClientRect().top;
+
+          deptBtn.parentElement.style.top = `${offsetTop}px`;
+          /* deptBtn.parentElement.style.bottom = `${-offsetBot}px`; */
         });
       });
     }

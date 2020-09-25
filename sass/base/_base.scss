@@ -10,7 +10,7 @@
 html,
 body {
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+
   font-size: 1rem;
 
   @include for-extra-large-desktop-up {

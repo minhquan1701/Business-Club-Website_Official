@@ -185,10 +185,10 @@
   font-size: 0.9rem;
 
   @include for-tablet-landscape-down {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
-  @include for-tablet-potrait-down {
+  @include for-phone {
     font-size: 1.3rem;
     margin-bottom: 2.6rem;
   }

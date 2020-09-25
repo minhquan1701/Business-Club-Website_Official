@@ -47,6 +47,10 @@
   @include for-tablet-potrait-down {
     top: 24px;
   }
+
+  @include for-phone {
+    font-size: 1.2rem;
+  }
 }
 
 .timeline-container {
@@ -74,8 +78,8 @@
   }
 
   @include for-tablet-potrait-down {
-    left: -40%;
-    top: 27%;
+    left: -27%;
+    top: 24%;
     transform: rotate(90deg);
   }
 }
@@ -172,8 +176,8 @@
   @include for-tablet-potrait-down {
     width: 155px;
     transform: rotate(-90deg);
-    bottom: 15px;
-    left: 75%;
+    bottom: -155px;
+    left: 77%;
   }
 }
 
@@ -191,15 +195,15 @@
 
   @include for-tablet-potrait-down {
     width: 118px;
-    bottom: 30px;
+    bottom: -129px;
+    left: 90%;
   }
 }
 
 .timeline__item:nth-child(3) .timeline__item__logo {
   bottom: 45px;
-
   @include for-tablet-potrait-down {
-    bottom: 70px;
+    bottom: -120px;
   }
 }
 
@@ -258,7 +262,7 @@
     transform: rotate(-90deg);
     width: #{$panel-width};
     top: calc(7vw - #{$panel-width});
-    left: 85%;
+    left: 74%;
     padding: 2rem 1.4rem;
     background-color: $dark-red;
   }
