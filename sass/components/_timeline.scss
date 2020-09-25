@@ -83,7 +83,7 @@
     transform: rotate(90deg);
   }
   @include for-phone {
-    top: 8%;
+    top: 6%;
   }
 }
 %dot-template {
@@ -101,6 +101,10 @@
 
   @include for-tablet-potrait-down {
     @include set-width-n-height(12px, 12px);
+  }
+
+  @include for-phone {
+    @include set-width-n-height(8px, 8px);
   }
 }
 
@@ -127,6 +131,12 @@
     @include for-tablet-potrait-down {
       @include set-width-n-height(25px, 25px);
       left: calc(100% - 8px);
+    }
+
+    @include for-phone {
+      width: 15px;
+      height: 15px;
+      left: calc(100% - 5px);
     }
   }
   &:hover {
@@ -182,6 +192,11 @@
     bottom: -155px;
     left: 77%;
   }
+  @include for-phone {
+    width: 100px;
+    bottom: -100px;
+    left: 84%;
+  }
 }
 
 .timeline__item:nth-child(2) .timeline__item__logo {
@@ -201,12 +216,20 @@
     bottom: -129px;
     left: 90%;
   }
+  @include for-phone {
+    width: 90px;
+    bottom: -92px;
+    left: 90%;
+  }
 }
 
 .timeline__item:nth-child(3) .timeline__item__logo {
   bottom: 45px;
   @include for-tablet-potrait-down {
     bottom: -120px;
+  }
+  @include for-phone {
+    bottom: -72px;
   }
 }
 
@@ -271,6 +294,9 @@
   }
   @include for-phone {
     @include set-width-n-height(60vw, 155px);
+    top: calc(5vw - 60vw);
+    left: 88%;
+    padding: 1.4rem 1rem;
   }
 }
 
@@ -327,6 +353,10 @@
     color: $text-black;
     background-color: $background-white;
   }
+  @include for-phone {
+    padding: 0.5rem 1.7rem;
+    bottom: 15px;
+  }
 }
 
 .carousel-projects-container {
@@ -356,6 +386,10 @@
   @include for-tablet-potrait-down {
     width: 55%;
   }
+  @include for-phone {
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(127px, 0.4fr));
+  }
 }
 .carousel-projects-toggler {
   position: absolute;
@@ -382,6 +416,10 @@
     i {
       transform: rotate(90deg);
     }
+  }
+
+  @include for-phone {
+    font-size: 1rem;
   }
 }
 
@@ -439,6 +477,9 @@
     @include for-tablet-potrait-down {
       top: 235px;
     }
+    @include for-phone {
+      top: 190px;
+    }
   }
 
   &:hover {
@@ -461,6 +502,9 @@
 
       @include for-tablet-potrait-down {
         height: 235px;
+      }
+      @include for-phone {
+        height: 190px;
       }
     }
 
@@ -569,6 +613,9 @@
 
   @include for-tablet-potrait-down {
     height: 235px;
+  }
+  @include for-phone {
+    height: 190px;
   }
 }
 

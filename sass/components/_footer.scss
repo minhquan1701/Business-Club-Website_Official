@@ -14,7 +14,7 @@ footer {
   }
 
   @include for-phone {
-    font-size: 0.6rem;
+    font-size: 0.4rem;
   }
 }
 .footer-logo {
@@ -47,6 +47,10 @@ footer {
 .footer-item i {
   font-size: 1.2em;
   margin-right: 0.4rem;
+
+  @include for-phone {
+    margin-right: 0.2rem;
+  }
 }
 .footer-item a {
   color: $background-white;

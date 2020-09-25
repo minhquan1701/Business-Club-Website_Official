@@ -108,12 +108,6 @@ window.addEventListener("DOMContentLoaded", () => {
   navItemObserver.observe(document.querySelector("#contact"));
 
   /****** DEPARTMENT BUTTONS ******/
-  deptBtnList.forEach((deptBtn) => {
-    deptBtn.addEventListener("click", () => {
-      deptBtn.style.display = "none";
-      deptBtn.nextElementSibling.classList.add("slide-up");
-    });
-  });
 
   closeBtnList.forEach((closeBtn) => {
     closeBtn.addEventListener("click", () => {
@@ -256,14 +250,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
       deptBtnList.forEach((deptBtn) => {
         deptBtn.addEventListener("click", () => {
-          deptBtn.style.display = "none";
           deptBtn.nextElementSibling.classList.add("slide-up");
 
           deptBtn.parentElement.classList.add("dept-card--on-phone-clicked");
-          let offsetTop = -deptBtn.parentElement.getBoundingClientRect().top;
-
-          deptBtn.parentElement.style.top = `${offsetTop}px`;
-          /* deptBtn.parentElement.style.bottom = `${-offsetBot}px`; */
+          document.addEventListener("scroll", () => {
+            deptBtn.parentElement.classList.remove(
+              "dept-card--on-phone-clicked"
+            );
+            deptBtn.nextElementSibling.classList.remove("slide-up");
+          });
+        });
+      });
+    } else {
+      deptBtnList.forEach((deptBtn) => {
+        deptBtn.addEventListener("click", () => {
+          deptBtn.style.display = "none";
+          deptBtn.nextElementSibling.classList.add("slide-up");
         });
       });
     }
