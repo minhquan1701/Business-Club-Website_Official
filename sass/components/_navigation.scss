@@ -19,6 +19,9 @@
   @include for-tablet-potrait-down {
     width: 125px;
   }
+  @include for-phone {
+    width: 90px;
+  }
 }
 
 .nav-link {

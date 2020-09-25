@@ -30,6 +30,9 @@
   @include for-tablet-potrait-down {
     width: 55%;
   }
+  @include for-phone {
+    width: 69%;
+  }
 }
 .testimonial-container {
   position: absolute;
@@ -112,6 +115,10 @@
     right: 66px;
     bottom: -228px;
   }
+  @include for-phone {
+    right: 45px;
+    bottom: -215px;
+  }
 }
 .testimonial-card__name-tag {
   display: flex;
@@ -179,6 +186,9 @@
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
+  @include for-phone {
+    font-size: 1rem;
+  }
 }
 
 .testimonial-card__name-tag__info__title {
@@ -192,6 +202,9 @@
   @include for-tablet-potrait-down {
     font-size: 1.1rem !important;
   }
+  @include for-phone {
+    font-size: 0.7rem !important;
+  }
 }
 .testimonial-card__quote {
   font-size: 1.2rem;
@@ -203,6 +216,9 @@
   @include for-tablet-potrait-down {
     font-size: 1.5rem;
     text-align: center;
+  }
+  @include for-phone {
+    font-size: 1rem;
   }
 }
 

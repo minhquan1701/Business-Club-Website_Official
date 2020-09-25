@@ -82,6 +82,9 @@
     top: 24%;
     transform: rotate(90deg);
   }
+  @include for-phone {
+    top: 8%;
+  }
 }
 %dot-template {
   content: "";
@@ -266,6 +269,9 @@
     padding: 2rem 1.4rem;
     background-color: $dark-red;
   }
+  @include for-phone {
+    @include set-width-n-height(60vw, 155px);
+  }
 }
 
 .timeline__item__content__des {
@@ -282,6 +288,9 @@
 
   @include for-tablet-potrait-down {
     font-size: 1.3rem;
+  }
+  @include for-phone {
+    font-size: 0.8rem;
   }
 }
 

@@ -12,6 +12,10 @@ footer {
   @include for-tablet-potrait-down {
     font-size: 1rem;
   }
+
+  @include for-phone {
+    font-size: 0.6rem;
+  }
 }
 .footer-logo {
   display: flex;
@@ -20,12 +24,21 @@ footer {
     flex-wrap: wrap;
   }
 }
+.footer-logo .logo {
+  @include for-phone {
+    margin: 0 0 1rem 1rem;
+  }
+}
 
 .footer-logo p {
   margin: 0 0 0.9rem 0.5rem;
 
   @include for-tablet-potrait-down {
     margin: 0 0 0 3rem;
+  }
+  @include for-phone {
+    margin: 0 0 0 1rem;
+    font-size: 0.1rem;
   }
 }
 .footer-item {
@@ -38,9 +51,10 @@ footer {
 .footer-item a {
   color: $background-white;
   transition: color 0.1s ease-in-out;
-
-  &:hover {
-    color: $primary-red;
+  @media (min-width: 599px) {
+    &:hover {
+      color: $primary-red;
+    }
   }
 }
 .footer-icons {
@@ -48,6 +62,10 @@ footer {
   margin-right: 3rem;
   @include for-tablet-potrait-down {
     margin-right: 2rem;
+  }
+
+  @include for-phone {
+    margin-right: 0.5rem;
   }
 }
 .facebook-logo,
@@ -58,5 +76,9 @@ footer {
   @include for-tablet-potrait-down {
     width: 30px;
     margin-right: 1rem;
+  }
+  @include for-phone {
+    width: 25px;
+    margin-right: 0.5rem;
   }
 }

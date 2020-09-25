@@ -67,7 +67,8 @@
   }
 
   @include for-phone {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
+    padding: 1rem 0.8rem;
   }
 }
 
@@ -134,6 +135,9 @@
   @include for-extra-large-desktop-up {
     width: 195px;
   }
+  @include for-phone {
+    width: 84px;
+  }
 }
 
 @for $i from 1 through 13 {
@@ -162,6 +166,10 @@ img[src="img/media-logo/dien-quan-network.png"] {
   @include for-extra-large-desktop-up {
     width: 131px !important;
   }
+
+  @include for-phone {
+    width: 70px !important;
+  }
 }
 
 img[src="img/media-logo/Isao-vn.png"] {
@@ -171,6 +179,9 @@ img[src="img/media-logo/Isao-vn.png"] {
 
   @include for-extra-large-desktop-up {
     width: 140px !important;
+  }
+  @include for-phone {
+    width: 70px !important;
   }
 }
 
@@ -191,6 +202,10 @@ img[src="img/coporate-logo/Mercedes-Benz.png"] {
   @include for-extra-large-desktop-up {
     width: 170px !important;
   }
+
+  @include for-phone {
+    width: 70px !important;
+  }
 }
 img[src="img/strategic-logo/DMS-Academy.png"] {
   @include for-tablet-landscape-down {
@@ -200,6 +215,9 @@ img[src="img/strategic-logo/DMS-Academy.png"] {
   @include for-extra-large-desktop-up {
     width: 133px !important;
   }
+  @include for-phone {
+    width: 70px !important;
+  }
 }
 img[src="img/strategic-logo/Redder-x-Dentsu-Logo.png"] {
   @include for-tablet-landscape-down {
@@ -208,6 +226,10 @@ img[src="img/strategic-logo/Redder-x-Dentsu-Logo.png"] {
 
   @include for-extra-large-desktop-up {
     width: 160px !important;
+  }
+
+  @include for-phone {
+    width: 70px !important;
   }
 }
 
