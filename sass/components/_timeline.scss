@@ -322,7 +322,7 @@
 
 .timeline__item__content__btn {
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
 
   font-weight: 700;
 
@@ -338,12 +338,12 @@
   }
 
   @include for-small-desktop-down {
-    bottom: 20px;
+    bottom: 10px;
   }
 
   @include for-tablet-landscape-down {
     //font-size: 0.8rem;
-    bottom: 25px;
+    bottom: 5px;
   }
 
   @include for-tablet-potrait-down {
