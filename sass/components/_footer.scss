@@ -14,7 +14,7 @@ footer {
   }
 
   @include for-phone {
-    font-size: 0.4rem;
+    font-size: 7px;
   }
 }
 .footer-logo {
@@ -38,7 +38,7 @@ footer {
   }
   @include for-phone {
     margin: 0 0 0 1rem;
-    font-size: 0.1rem;
+    font-size: 5px;
   }
 }
 .footer-item {

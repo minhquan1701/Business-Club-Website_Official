@@ -70,6 +70,10 @@
     font-size: 0.5rem;
     padding: 1rem 0.8rem;
   }
+  @include for-phone-sm {
+    font-size: 7px;
+    padding: 1rem;
+  }
 }
 
 .navigator__item--active {
@@ -192,6 +196,10 @@ img[src="img/coporate-logo/Kuehne-Nagel.png"] {
 
   @include for-extra-large-desktop-up {
     width: 240px !important;
+  }
+
+  @include for-phone {
+    width: 120px !important;
   }
 }
 img[src="img/coporate-logo/Mercedes-Benz.png"] {

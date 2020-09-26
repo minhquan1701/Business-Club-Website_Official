@@ -51,6 +51,9 @@
   @include for-phone {
     font-size: 1.2rem;
   }
+  @include for-phone-sm {
+    top: 12px;
+  }
 }
 
 .timeline-container {
@@ -84,6 +87,9 @@
   }
   @include for-phone {
     top: 6%;
+  }
+  @include for-phone-sm {
+    top: 10%;
   }
 }
 %dot-template {
@@ -293,10 +299,16 @@
     background-color: $dark-red;
   }
   @include for-phone {
-    @include set-width-n-height(60vw, 155px);
-    top: calc(5vw - 60vw);
-    left: 88%;
+    @include set-width-n-height(60vw, 150px);
+    top: calc(8vw - 60vw);
+    left: 83%;
     padding: 1.4rem 1rem;
+  }
+
+  @include for-phone-sm {
+    width: 65vw;
+    top: calc(8vw - 65vw);
+    left: 78%;
   }
 }
 
@@ -316,7 +328,7 @@
     font-size: 1.3rem;
   }
   @include for-phone {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -388,7 +400,10 @@
   }
   @include for-phone {
     width: 90%;
-    grid-template-columns: repeat(auto-fit, minmax(127px, 0.4fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 0.4fr));
+  }
+  @include for-phone-sm {
+    width: 95%;
   }
 }
 .carousel-projects-toggler {
@@ -451,6 +466,12 @@
     @include for-tablet-potrait-down {
       top: 235px;
     }
+    @include for-phone {
+      top: 190px;
+    }
+    @include for-phone-sm {
+      top: 150px;
+    }
   }
 
   &::after {
@@ -479,6 +500,10 @@
     }
     @include for-phone {
       top: 190px;
+      height: 1.5px;
+    }
+    @include for-phone-sm {
+      top: 150px;
     }
   }
 
@@ -505,6 +530,9 @@
       }
       @include for-phone {
         height: 190px;
+      }
+      @include for-phone-sm {
+        height: 150px;
       }
     }
 
@@ -570,6 +598,10 @@
   @include for-tablet-potrait-down {
     border-width: 2px;
   }
+  @include for-phone-sm {
+    border-width: 1px;
+    margin-top: 0.6rem;
+  }
 }
 
 .carousel-projects-item__btn h5 {
@@ -582,6 +614,9 @@
   @include for-tablet-landscape-down {
     font-size: 0.7rem;
   }
+  @include for-phone-sm {
+    font-size: 8px;
+  }
 }
 .carousel-projects-item__btn p {
   font-size: 0.7rem;
@@ -592,6 +627,9 @@
 
   @include for-tablet-landscape-down {
     font-size: 0.5rem;
+  }
+  @include for-phone-sm {
+    font-size: 6px;
   }
 }
 
@@ -616,6 +654,9 @@
   }
   @include for-phone {
     height: 190px;
+  }
+  @include for-phone-sm {
+    height: 150px;
   }
 }
 

@@ -10,6 +10,12 @@
 }
 
 // Responsive Breakpoints
+@mixin for-phone-sm {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
 @mixin for-phone {
   @media (max-width: 599px) {
     @content;

@@ -116,8 +116,13 @@
     bottom: -228px;
   }
   @include for-phone {
-    right: 45px;
+    right: 57px;
     bottom: -200px;
+  }
+  @include for-phone-sm {
+    bottom: -190px;
+    width: 40px;
+    right: 50px;
   }
 }
 .testimonial-card__name-tag {
@@ -152,6 +157,10 @@
   @include for-phone {
     width: 80px;
     height: 80px;
+  }
+
+  @include for-phone-sm {
+    @include set-width-n-height(75px, 75px);
   }
 }
 
