@@ -26,8 +26,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".menu-btn");
   const hamburger = document.querySelector(".menu-btn__burger");
 
-  const tabletPotraitDown = window.matchMedia("(max-width:850px)");
-
   /******* NAVIGATION ON SCROLL CHANGE ******/
   let showMenu = false;
   let isNavHovered = false;
@@ -220,6 +218,18 @@ window.addEventListener("DOMContentLoaded", () => {
     clearInterval(slideAutoRunning);
     slideAutoRunning = setInterval(changeSlide, 5000);
   });
+
+  document
+    .querySelector(".testimonial-wraper")
+    .addEventListener("mousemove", () => {
+      clearInterval(slideAutoRunning);
+    });
+
+  document
+    .querySelector(".testimonial-wraper")
+    .addEventListener("mouseleave", () => {
+      slideAutoRunning = setInterval(changeSlide, 5000);
+    });
 
   // Logo event listener.
   document.querySelector(".logo").addEventListener("click", () => {

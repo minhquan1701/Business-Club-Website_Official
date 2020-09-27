@@ -27,7 +27,6 @@
   @include for-phone {
     font-size: 1.5rem;
     top: 30px;
-    //top: -30px;
   }
 }
 
@@ -57,10 +56,6 @@
     height: 65vh;
   }
   @include for-phone {
-    /*  position: sticky;
-    top: 20px;
-    transform-origin: center top; */
-
     height: 30vh;
     margin-bottom: 7rem;
   }
@@ -99,6 +94,10 @@
   }
   @include for-phone {
     top: 60%;
+    right: 80px;
+    transition: all 0.1s ease-in-out;
+  }
+  @include for-phone-sm {
     right: 68px;
   }
 
@@ -128,7 +127,7 @@
     left: 100px;
   }
   @include for-phone {
-    left: 75px;
+    left: 85px;
   }
 }
 
@@ -344,6 +343,10 @@
     width: calc(100% + 3px);
     height: 100%;
     border-color: $primary-red;
+
+    @include for-extra-large-desktop-up {
+      width: calc(100% + 5px);
+    }
   }
 }
 
@@ -402,5 +405,12 @@
   top: 0;
   left: 0;
   z-index: 2;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.icon-mobile {
+  display: none;
+  @include for-phone {
+    display: inline;
+  }
 }
