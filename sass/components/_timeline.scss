@@ -86,10 +86,7 @@
     transform: rotate(90deg);
   }
   @include for-phone {
-    top: 6%;
-  }
-  @include for-phone-sm {
-    top: 10%;
+    top: calc((20vh) / 2);
   }
 }
 %dot-template {

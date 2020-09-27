@@ -407,10 +407,3 @@
   z-index: 2;
   transition: all 0.4s ease-in-out;
 }
-
-.icon-mobile {
-  display: none;
-  @include for-phone {
-    display: inline;
-  }
-}
